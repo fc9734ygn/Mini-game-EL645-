@@ -10,7 +10,7 @@ public class Ninja_Player : MonoBehaviour
     {
         //Set screen orientation to landscape
         Screen.orientation = ScreenOrientation.Landscape;
-        //Set sleep timeout to never
+        //Set sleep timeout to never fgfgf
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
     }
     void Update()
