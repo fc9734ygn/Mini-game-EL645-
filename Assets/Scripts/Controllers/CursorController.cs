@@ -3,36 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class CursorController : MonoBehaviour
 {
 
     Controller controller;
 
-    const float appStartX = -17f;
-    const float appEndX = -appStartX;
-    const float leapStartX = -200f;
-    const float leapEndX = -leapStartX;
-
-    const float appStartY = -6f;
-    const float appEndY = 8f;
-    const float leapStartY = 45f;
-    const float leapEndY = 500f;
-
     private float leapRangeX;
-    private float appRangeX;
+    private float screenRangeX;
     private float leapRangeY;
-    private float appRangeY;
-
-
+    private float screenRangeY;
     private Vector3 pos; //Position
     public int score = 0;
 
 
     void Start()
     {
-        //Set screen orientation to landscape
         Screen.orientation = ScreenOrientation.Landscape;
-        //Set sleep timeout to never fgfgf
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
 
         InitLeapController();
@@ -40,13 +26,12 @@ public class Player : MonoBehaviour
 
     private void InitLeapController()
     {
-        //create a new leap controller
         controller = new Controller();
 
-        leapRangeX = leapEndX - leapStartX;
-        appRangeX = -appStartX - appStartX;
-        leapRangeY = leapEndY - leapStartY;
-        appRangeY = -appStartY - appStartY;
+        leapRangeX = Constants.LEAP_END_COORDINATE_X - Constants.LEAP_START_COORDINATE_X;
+        screenRangeX = -Constants.SCREEN_START_COORDINATE_X - Constants.SCREEN_START_COORDINATE_X;
+        leapRangeY = Constants.LEAP_END_COORDINATE_Y - Constants.LEAP_START_COORDINATE_Y;
+        screenRangeY = -Constants.SCREEN_START_COORDINATE_Y - Constants.SCREEN_START_COORDINATE_Y;
     }
 
     void Update()
@@ -57,14 +42,11 @@ public class Player : MonoBehaviour
             List<Hand> hands = frame.Hands;
             Hand firstHand = hands[0];
 
-            float newX = MapCoordinate(firstHand.PalmPosition.x, leapStartX, leapRangeX, appRangeX, appStartX);
-            float newY = MapCoordinate(firstHand.PalmPosition.y, leapStartY, leapRangeY, appRangeY, appStartY);
+            float newX = MapCoordinate(firstHand.PalmPosition.x, Constants.LEAP_START_COORDINATE_X, leapRangeX, screenRangeX, Constants.SCREEN_START_COORDINATE_X);
+            float newY = MapCoordinate(firstHand.PalmPosition.y, Constants.LEAP_START_COORDINATE_Y, leapRangeY, screenRangeY, Constants.SCREEN_START_COORDINATE_Y);
 
-            //Find mouse position
             pos = new Vector3(newX, newY, transform.position.z);
-            //Set position
             transform.position = new Vector3(pos.x, pos.y, 3);
-
         }
 
     }
