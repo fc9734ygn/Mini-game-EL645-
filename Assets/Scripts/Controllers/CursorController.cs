@@ -13,7 +13,6 @@ public class CursorController : MonoBehaviour
     private float leapRangeY;
     private float screenRangeY;
     private Vector3 pos; //Position
-    public int score = 0;
 
 
     void Start()
@@ -36,43 +35,41 @@ public class CursorController : MonoBehaviour
 
     void Update()
     {
-        Frame frame = controller.Frame(); // controller is a Controller object
-        if (frame.Hands.Count > 0)
-        {
-            List<Hand> hands = frame.Hands;
-            Hand firstHand = hands[0];
-
-            float newX = MapCoordinate(firstHand.PalmPosition.x, Constants.LEAP_START_COORDINATE_X, leapRangeX, screenRangeX, Constants.SCREEN_START_COORDINATE_X);
-            float newY = MapCoordinate(firstHand.PalmPosition.y, Constants.LEAP_START_COORDINATE_Y, leapRangeY, screenRangeY, Constants.SCREEN_START_COORDINATE_Y);
-
-            pos = new Vector3(newX, newY, transform.position.z);
-            transform.position = new Vector3(pos.x, pos.y, 3);
-        }
-
+        TrackCursor();
     }
 
-    float MapCoordinate(float leap, float leapStart, float leapRange, float appRange, float appStart)
+    private void TrackCursor()
     {
-        float mapped;
-        mapped = (leap - leapStart) * (appRange / leapRange) + appStart;
-        return mapped;
+
+        if (Input.touchCount == 1)
+        {
+            if (Application.platform == RuntimePlatform.IPhonePlayer)
+            {
+                transform.position = GetIphoneCursorPosition();
+            }
+            else if (Application.platform == RuntimePlatform.Android)
+            {
+                //TODO: get android cursor position
+                transform.position = GetIphoneCursorPosition();
+            }
+            GetComponent<Collider2D>().enabled = true;
+        }
+        else
+        {
+            GetComponent<Collider2D>().enabled = false;
+        }
+    }
+
+    private Vector3 GetIphoneCursorPosition()
+    {
+        //Find screen touch position, by
+        //transforming position from screen space into game world space.
+        pos = Camera.main.ScreenToWorldPoint(new Vector3(Input.GetTouch(0).position.x, Input.GetTouch(0).position.y, 1));
+        return new Vector3(pos.x, pos.y, 3);
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Fruit")
-        {
-            other.gameObject.transform.GetComponent<Fruit2D>().Hit();
-            score++;
-            Debug.Log(score);
 
-        }
-        if (other.tag == "Bomb")
-        {
-            other.gameObject.transform.GetComponent<Bomb2D>().Hit();
-            score = score - 2;
-            Debug.Log(score);
-
-        }
     }
 }
