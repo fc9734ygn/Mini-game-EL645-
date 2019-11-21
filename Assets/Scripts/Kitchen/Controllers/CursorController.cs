@@ -43,14 +43,10 @@ public class CursorController : MonoBehaviour
 
         if (Input.touchCount == 1)
         {
-            if (Application.platform == RuntimePlatform.IPhonePlayer)
+
+            if (Application.platform == RuntimePlatform.Android)
             {
-                transform.position = GetIphoneCursorPosition();
-            }
-            else if (Application.platform == RuntimePlatform.Android)
-            {
-                //TODO: get android cursor position
-                transform.position = GetIphoneCursorPosition();
+                transform.position = GetPhoneCursorPosition();
             }
             GetComponent<Collider2D>().enabled = true;
         }
@@ -60,7 +56,7 @@ public class CursorController : MonoBehaviour
         }
     }
 
-    private Vector3 GetIphoneCursorPosition()
+    private Vector3 GetPhoneCursorPosition()
     {
         //Find screen touch position, by
         //transforming position from screen space into game world space.

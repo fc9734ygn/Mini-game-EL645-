@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1335656764834754800}
   - component: {fileID: 6873680680322801286}
   - component: {fileID: 5291455996868062172}
+  - component: {fileID: 1421515426302757178}
   m_Layer: 0
   m_Name: Splat
   m_TagString: Untagged
@@ -92,3 +93,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6b5ac51a8e3c6e4bb9bfe2a07b93ef4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroySpeed: 0.2
+--- !u!114 &1421515426302757178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7867349616424451932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60821bc2c9bfceb418ae9867bcd83a5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tool: 0
+  groceryType: 0

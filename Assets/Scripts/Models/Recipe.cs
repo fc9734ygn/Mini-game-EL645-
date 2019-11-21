@@ -6,5 +6,5 @@ using UnityEngine;
 public class Recipe
 {
     public string title;
-    public List<Food> ingredients;
+    public List<Grocery> ingredients;
 }
