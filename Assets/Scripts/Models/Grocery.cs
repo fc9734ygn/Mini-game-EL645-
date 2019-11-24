@@ -29,6 +29,8 @@ public class Grocery : MonoBehaviour
         Garlic,
         Oil,
         Pasta,
+        Bacon,
+        Other //random items
     }
 
 }
