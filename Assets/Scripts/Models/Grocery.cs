@@ -4,16 +4,10 @@ using UnityEngine;
 
 public class Grocery : MonoBehaviour
 {
-    public Grocery.Tool tool;
+    public Constants.TOOLTYPE tool;
     public GroceryType groceryType;
 
-    public enum Tool
-    {
-        Knife,
-        Mortar,
-        Grater,
-        Hand
-    }
+
 
     public enum GroceryType
     {
