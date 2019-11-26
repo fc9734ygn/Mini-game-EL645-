@@ -45,6 +45,21 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: Background
+    uniqueID: 3222065329
+    locked: 0
+  - name: ToolButtons
+    uniqueID: 2174871791
+    locked: 0
+  - name: Groceries
+    uniqueID: 2210042209
+    locked: 0
+  - name: Characters
+    uniqueID: 2611099941
+    locked: 0
+  - name: UI
+    uniqueID: 3755116027
+    locked: 0
+  - name: Background
     uniqueID: 2137205485
     locked: 0
   - name: Interactables

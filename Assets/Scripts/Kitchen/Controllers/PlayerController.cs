@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            gameObject.SetActive(false);
+            gameObject.SetActive(true);
         }
     }
 
@@ -68,12 +68,15 @@ public class PlayerController : MonoBehaviour
     }
 
     // When one of the tool button is pressed
-    public void ToolButtonPressed(Constants.TOOLTYPE tool)
+    public void ToolButtonPressed(int tool)
     {
         // Change the current tool and call change state
-        currentTool = tool;
+        currentTool = (Constants.TOOLTYPE)tool;
         UpdateState();
     }
+
+
+
 
     // Changes the player's sprite and collision sound
     private void UpdateState()
@@ -88,17 +91,20 @@ public class PlayerController : MonoBehaviour
             case Constants.TOOLTYPE.Mortar:
                 spriteRenderer.sprite = mortarSprite;
                 // change sound effect
+                Debug.Log("mortar");
                 break;
             case Constants.TOOLTYPE.Grater:
                 spriteRenderer.sprite = graterSprite;
                 // change sound effect
+                Debug.Log("grater");
 
                 break;
             case Constants.TOOLTYPE.Hand:
                 spriteRenderer.sprite = handSprite;
                 // change sound effect
+                Debug.Log("hand");
 
-               break;
+                break;
 
         }
 
