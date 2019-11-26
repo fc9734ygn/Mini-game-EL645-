@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Fruit
   - Bomb
+  - Grocery
   layers:
   - Default
   - TransparentFX
@@ -42,4 +43,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2137205485
+    locked: 0
+  - name: Interactables
+    uniqueID: 1757884193
+    locked: 0
+  - name: HUD
+    uniqueID: 1922034603
     locked: 0
