@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7528839421908300722}
   m_Layer: 0
   m_Name: Parsley
-  m_TagString: Untagged
+  m_TagString: Grocery
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
