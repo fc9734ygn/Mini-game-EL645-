@@ -9,7 +9,6 @@ public class Basket : MonoBehaviour
     {
         Screen.orientation = ScreenOrientation.Landscape;
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
-
     }
 
     void Update()
@@ -28,16 +27,13 @@ public class Basket : MonoBehaviour
 
     private bool CheckIfSelected()
     {
-        Bounds basketBounds = GetComponent<SpriteRenderer>().bounds;
-      
-      //  Debug.Log("bounds  " + basketBounds.ToString() + "cursor pos   " + cursorPos.ToString() + "is in bounds   " + basketBounds.Contains(GetPhoneCursorPosition()));
+        Bounds basketBounds = GetComponent<SpriteRenderer>().bounds;      
         return Input.touchCount == 1 && basketBounds.Contains(GetPhoneCursorPosition());
     }
 
 
     private Vector2 GetPhoneCursorPosition()
     {
-       // Vector3 pos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
         Vector2 pos = new Vector2(Input.GetTouch(0).position.x, Input.GetTouch(0).position.y);
         return Camera.main.ScreenToWorldPoint(pos);
     }
@@ -45,6 +41,8 @@ public class Basket : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-
+                
     }
+
+
 }
