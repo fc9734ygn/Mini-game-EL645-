@@ -224,12 +224,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnTime: 1
-  apple: {fileID: 3170772528329687493, guid: ab6b9dad799f03241af4ffea41e44597, type: 3}
-  bomb: {fileID: 5125884213667442570, guid: 9f322a739bd79694a99a474d74ce27f2, type: 3}
   upForce: 750
   leftRightForce: 200
-  maxX: -7
-  minX: 7
+  gravity: 1
+  maxX: 10
+  minX: -10
 --- !u!4 &1861209404
 Transform:
   m_ObjectHideFlags: 0
