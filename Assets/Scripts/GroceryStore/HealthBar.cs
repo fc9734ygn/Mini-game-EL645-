@@ -1,25 +1,67 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
     public Sprite heartFull;
     public Sprite hearthEmpty;
 
-    public GameObject heart0;
-    public GameObject heart1;
-    public GameObject heart2;
+    public Image heart0;
+    public Image heart1;
+    public Image heart2;
 
-    // Start is called before the first frame update
-    void Start()
+    public int currentHealth;
+
+    private void Update()
     {
-        
+        UpdateHUD();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void DealDamage()
     {
-        
+        currentHealth--;
+        if (currentHealth < 1)
+        {
+            //TODO: die
+        }
+    }
+
+    public void Heal()
+    {
+        if (currentHealth < 3)
+        {
+            currentHealth++;
+        }
+    }
+
+    private void UpdateHUD()
+    {
+        switch (currentHealth)
+        {
+            case 0:
+                heart0.sprite = hearthEmpty;
+                heart1.sprite = hearthEmpty;
+                heart2.sprite = hearthEmpty;
+                break;
+            case 1:
+                heart0.sprite = heartFull;
+                heart1.sprite = hearthEmpty;
+                heart2.sprite = hearthEmpty;
+                break;
+            case 2:
+                heart0.sprite = heartFull;
+                heart1.sprite = heartFull;
+                heart2.sprite = hearthEmpty;
+                break;
+            case 3:
+                heart0.sprite = heartFull;
+                heart1.sprite = heartFull;
+                heart2.sprite = heartFull;
+                break;
+            default:
+                break;
+        }
     }
 }
