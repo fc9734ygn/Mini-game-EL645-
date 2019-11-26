@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2109613433991724161}
   - component: {fileID: 4109659490826534307}
   - component: {fileID: 6429898903497603758}
+  - component: {fileID: 1367351539275848682}
   - component: {fileID: 3376368778445725662}
   m_Layer: 0
   m_Name: Beef
@@ -107,6 +108,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
+--- !u!114 &1367351539275848682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5046757994323031829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60821bc2c9bfceb418ae9867bcd83a5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tool: 0
+  groceryType: 3
 --- !u!50 &3376368778445725662
 Rigidbody2D:
   serializedVersion: 4
