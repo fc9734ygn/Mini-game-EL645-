@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Fruit
   - Bomb
+  - Grocery
   layers:
   - Default
   - TransparentFX

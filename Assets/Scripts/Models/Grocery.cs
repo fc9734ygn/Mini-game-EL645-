@@ -8,7 +8,6 @@ public class Grocery : MonoBehaviour
     public GroceryType groceryType;
 
 
-
     public enum GroceryType
     {
         Onion,

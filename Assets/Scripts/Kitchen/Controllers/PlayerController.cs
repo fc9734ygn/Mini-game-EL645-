@@ -61,15 +61,18 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Grocery"))
         {
             if(other.gameObject.GetComponent<Grocery>().tool == currentTool)
+            {
+
+            }
         }
     }
 
     // When one of the tool button is pressed
-    public void ToolButtonPressed(Tool tool)
+    public void ToolButtonPressed(Constants.TOOLTYPE tool)
     {
         // Change the current tool and call change state
         currentTool = tool;
-        ChangeState();
+        UpdateState();
     }
 
     // Changes the player's sprite and collision sound

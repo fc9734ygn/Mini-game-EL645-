@@ -274,6 +274,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8025fb882fb74d64394cf856872dbec2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knifeSprite: {fileID: 21300000, guid: e50ea460e5b9543f084ac6b22a477b86, type: 3}
+  mortarSprite: {fileID: 21300000, guid: d4b4160d2ad654db1a69c841a46adc6d, type: 3}
+  graterSprite: {fileID: 21300000, guid: 08dd77465ba1843b695f538f5120040e, type: 3}
+  handSprite: {fileID: 21300000, guid: f8595c197debc48f3bc84a8831849cb9, type: 3}
 --- !u!96 &1928467898
 TrailRenderer:
   serializedVersion: 2

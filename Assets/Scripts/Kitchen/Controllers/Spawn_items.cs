@@ -22,30 +22,34 @@ public class Spawn_items : MonoBehaviour
 
     IEnumerator Spawn()
     {
-        //Wait spawnTime
+        // Wait spawnTime
         yield return new WaitForSeconds(spawnTime);
-        //Spawn prefab is apple
+
+        // Select a random grovcery prefab 
         System.Random random = new System.Random();
         int randomIndex = random.Next(collectedGroceries.Length - 1);
         GameObject prefab = collectedGroceries[randomIndex] as GameObject;
+
+        // Add gravity
         prefab.GetComponent<Rigidbody2D>().gravityScale = gravity;
 
-        //Spawn prefab add randomc position
+        // Spawn prefab add random position
         GameObject go = Instantiate(prefab, new Vector3(Random.Range(minX
-        , maxX + 1), transform.position.y, 0f), Quaternion.Euler(0, 0, Random.Range(-
-        90F, 90F))) as GameObject;
-        //If x position is over 0 go left
+        , maxX + 1), transform.position.y, 0f), Quaternion.Euler(0, 0, 0)) as GameObject;
+
+        // If x position is over 0 go left
         if (go.transform.position.x > 0)
         {
             go.GetComponent<Rigidbody2D>().AddForce(new Vector2(-
             leftRightForce, upForce));
         }
-        //Else go right
+        // Else go right
         else
         {
             go.GetComponent<Rigidbody2D>().AddForce(new Vector2(leftRightForce, upForce));
         }
-        //Start the spawn again
+
+        // Start the spawn again
         StartCoroutine("Spawn");
     }
 }
