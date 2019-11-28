@@ -680,10 +680,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 513b63ca-5f8c-43e4-b40c-8031ab06a3a3
+  cloudProjectId: 
   framebufferDepthMemorylessMode: 0
-  projectName: Fruit Ninja
-  organizationId: michaelskalistirispikis
+  projectName: 
+  organizationId: 
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
