@@ -25,7 +25,6 @@ public class Grocery : MonoBehaviour
         Bacon,
         Other //random items
     }
-
 }
 
 

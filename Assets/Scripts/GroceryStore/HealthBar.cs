@@ -14,25 +14,35 @@ public class HealthBar : MonoBehaviour
 
     public int currentHealth;
 
+    private int MAX_HEALTH = 3;
+
     private void Update()
     {
         UpdateHUD();
     }
 
-    public void DealDamage()
+    public void DealDamage(int amount)
     {
-        currentHealth--;
+        if(currentHealth > 0)
+        {
+            currentHealth = currentHealth - amount;
+        }
+       
         if (currentHealth < 1)
         {
-            //TODO: die
+            //TODO: die (goto next scene)
         }
     }
 
-    public void Heal()
+    public void Heal(int amount)
     {
-        if (currentHealth < 3)
+        if (currentHealth + amount > MAX_HEALTH)
         {
-            currentHealth++;
+            currentHealth = MAX_HEALTH;
+        }
+        else
+        {
+            currentHealth = currentHealth + amount;
         }
     }
 
