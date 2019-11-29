@@ -4,8 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Fruit
-  - Bomb
   - Grocery
   layers:
   - Default
@@ -61,6 +59,9 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 2137205485
+    locked: 0
+  - name: BackgroudHUD
+    uniqueID: 3671152599
     locked: 0
   - name: Interactables
     uniqueID: 1757884193

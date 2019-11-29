@@ -6,5 +6,11 @@ using UnityEngine;
 public class Recipe
 {
     public string title;
-    public List<Grocery> ingredients;
+    public List<Grocery.GroceryType> ingredients;
+
+    public Recipe(string title, List<Grocery.GroceryType> ingredients)
+    {
+        this.title = title;
+        this.ingredients = ingredients;
+    }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Basket : MonoBehaviour
 {
+    private List<Grocery.GroceryType> collectedGroceries;
 
     void Start()
     {
