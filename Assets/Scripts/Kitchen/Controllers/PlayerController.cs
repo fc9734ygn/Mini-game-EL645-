@@ -6,11 +6,6 @@ public class PlayerController : MonoBehaviour
 {
     private Constants.TOOLTYPE currentTool = Constants.TOOLTYPE.Knife;
 
-    // Declare Sprites
-    public Sprite knifeSprite;
-    public Sprite mortarSprite;
-    public Sprite graterSprite;
-    public Sprite handSprite;
 
     // Declare sprite renderer
     private SpriteRenderer spriteRenderer;
@@ -72,6 +67,8 @@ public class PlayerController : MonoBehaviour
     {
         // Change the current tool and call change state
         currentTool = (Constants.TOOLTYPE)tool;
+        Debug.Log(tool);
+
         UpdateState();
     }
 
@@ -85,22 +82,20 @@ public class PlayerController : MonoBehaviour
         {
 
             case Constants.TOOLTYPE.Knife:
-                spriteRenderer.sprite = knifeSprite;
                 // change sound effect
+                Debug.Log("knife");
+
                 break;
             case Constants.TOOLTYPE.Mortar:
-                spriteRenderer.sprite = mortarSprite;
                 // change sound effect
                 Debug.Log("mortar");
                 break;
             case Constants.TOOLTYPE.Grater:
-                spriteRenderer.sprite = graterSprite;
                 // change sound effect
                 Debug.Log("grater");
 
                 break;
             case Constants.TOOLTYPE.Hand:
-                spriteRenderer.sprite = handSprite;
                 // change sound effect
                 Debug.Log("hand");
 
