@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    public Sprite heartFull;
-    public Sprite hearthEmpty;
+    public Sprite hpFull;
+    public Sprite hpEmpty;
 
-    public Image heart0;
-    public Image heart1;
-    public Image heart2;
+    public Image icon0;
+    public Image icon1;
+    public Image icon2;
 
     public int currentHealth;
 
@@ -26,11 +26,34 @@ public class HealthBar : MonoBehaviour
         if(currentHealth > 0)
         {
             currentHealth = currentHealth - amount;
+            Animate();
         }
        
         if (currentHealth < 1)
         {
             //TODO: die (goto next scene)
+        }
+    }
+
+    private void Animate()
+    {
+          StartCoroutine(ShakeAnimation(transform.position));
+    }
+
+    private IEnumerator ShakeAnimation(Vector3 originalPos)
+    {
+        var countDown = 0.5f;
+        for (int i = 0; i < 10000; i++)
+        {
+            while (countDown >= 0)
+            {
+                var movementSpeed = 25;
+                var posStart = originalPos + new Vector3(0, 0.05f, 0);
+                var posEnd = originalPos + new Vector3(0, -0.05f, 0);
+                countDown -= Time.smoothDeltaTime;
+                transform.position = Vector3.Lerp(posStart, posEnd, Mathf.PingPong(Time.time * movementSpeed, 1.0f));
+                yield return null;
+            }
         }
     }
 
@@ -51,24 +74,24 @@ public class HealthBar : MonoBehaviour
         switch (currentHealth)
         {
             case 0:
-                heart0.sprite = hearthEmpty;
-                heart1.sprite = hearthEmpty;
-                heart2.sprite = hearthEmpty;
+                icon0.sprite = hpEmpty;
+                icon1.sprite = hpEmpty;
+                icon2.sprite = hpEmpty;
                 break;
             case 1:
-                heart0.sprite = heartFull;
-                heart1.sprite = hearthEmpty;
-                heart2.sprite = hearthEmpty;
+                icon0.sprite = hpFull;
+                icon1.sprite = hpEmpty;
+                icon2.sprite = hpEmpty;
                 break;
             case 2:
-                heart0.sprite = heartFull;
-                heart1.sprite = heartFull;
-                heart2.sprite = hearthEmpty;
+                icon0.sprite = hpFull;
+                icon1.sprite = hpFull;
+                icon2.sprite = hpEmpty;
                 break;
             case 3:
-                heart0.sprite = heartFull;
-                heart1.sprite = heartFull;
-                heart2.sprite = heartFull;
+                icon0.sprite = hpFull;
+                icon1.sprite = hpFull;
+                icon2.sprite = hpFull;
                 break;
             default:
                 break;
