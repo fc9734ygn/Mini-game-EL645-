@@ -11,6 +11,7 @@ public class HealthBar : MonoBehaviour
     public Image icon0;
     public Image icon1;
     public Image icon2;
+    public GameObject sceneController;
 
     public int currentHealth;
 
@@ -31,7 +32,8 @@ public class HealthBar : MonoBehaviour
        
         if (currentHealth < 1)
         {
-            //TODO: die (goto next scene)
+            //TODO: pass collected items
+            sceneController.GetComponent<SceneController>().LoadKitchenScene();
         }
     }
 
@@ -47,11 +49,11 @@ public class HealthBar : MonoBehaviour
         {
             while (countDown >= 0)
             {
-                var movementSpeed = 25;
+                var speed = 25;
                 var posStart = originalPos + new Vector3(0, 0.05f, 0);
                 var posEnd = originalPos + new Vector3(0, -0.05f, 0);
                 countDown -= Time.smoothDeltaTime;
-                transform.position = Vector3.Lerp(posStart, posEnd, Mathf.PingPong(Time.time * movementSpeed, 1.0f));
+                transform.position = Vector3.Lerp(posStart, posEnd, Mathf.PingPong(Time.time * speed, 1.0f));
                 yield return null;
             }
         }

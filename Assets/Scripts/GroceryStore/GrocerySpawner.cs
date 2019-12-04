@@ -30,4 +30,10 @@ public class GrocerySpawner : MonoBehaviour
 
         StartCoroutine("Spawn");
     }
+
+    public void IncreaseDifficulty()
+    {
+        dropSpeed = dropSpeed + 50;
+        spawnIntervalInSeconds = spawnIntervalInSeconds - 0.1f;
+    }
 }

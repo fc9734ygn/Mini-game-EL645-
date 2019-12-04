@@ -28,7 +28,7 @@ public class RecipePanel : MonoBehaviour
     {
         //TODO: remove dummy data
         // SetCurrentRecipe() should be called from outside of the class at the start of the scene
-        SetCurrentRecipe(new Recipe("Spaghetti aglio e olio", new List<Grocery.GroceryType> { Grocery.GroceryType.Bacon, Grocery.GroceryType.Cheese, Grocery.GroceryType.Pepper, Grocery.GroceryType.Tomato }));
+        SetCurrentRecipe(new Recipe("Spaghetti aglio e olio", new List<Grocery.GroceryType> { Grocery.GroceryType.Bacon, Grocery.GroceryType.Cheese, Grocery.GroceryType.Pepper, Grocery.GroceryType.Tomato, Grocery.GroceryType.Beef, Grocery.GroceryType.Garlic }));
     }
 
     private void Awake()

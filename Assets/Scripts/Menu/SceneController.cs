@@ -29,4 +29,9 @@ public class SceneController : MonoBehaviour
     {
         SceneManager.LoadScene("Credits", LoadSceneMode.Single);
     }
+
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("Menu", LoadSceneMode.Single);
+    }
 }
