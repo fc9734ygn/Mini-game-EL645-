@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Fly"))
         {
-            Destroy(other.gameObject);
+            //Destroy(other.gameObject);
         }
     }
 

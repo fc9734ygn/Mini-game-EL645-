@@ -1860,5 +1860,15 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 2.2683315
       objectReference: {fileID: 0}
+    - target: {fileID: 5546158177174000839, guid: 768529e8d5d944baeaec93a32fa2fc5f,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 5546158177174000839, guid: 768529e8d5d944baeaec93a32fa2fc5f,
+        type: 3}
+      propertyPath: movementSpeed
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 768529e8d5d944baeaec93a32fa2fc5f, type: 3}
