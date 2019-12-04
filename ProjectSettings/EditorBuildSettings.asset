@@ -4,5 +4,23 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 2779e816b3dcd0d429fdcec827cdd78c
+  - enabled: 1
+    path: Assets/Scenes/GroceryStore.unity
+    guid: 0d6035c4fe427134b95aa141564b2567
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: f582e3b2daa1fc448af78c753f55a711
+  - enabled: 1
+    path: Assets/Scenes/Highscores.unity
+    guid: 2ca5288133de6684682be8b42d435938
+  - enabled: 1
+    path: Assets/Scenes/Kitchen.unity
+    guid: 37244404f13908342b88a3019cf9a98a
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 44d72a589329caa40adca08f994c5604
   m_configObjects: {}

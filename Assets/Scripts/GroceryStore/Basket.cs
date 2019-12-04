@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class Basket : MonoBehaviour
 {
-    private List<Grocery.GroceryType> collectedGroceries = new List<Grocery.GroceryType> { };
     public GameObject recipePanel;
-    private Recipe currentRecipe;
     public GameObject healthBarPanel;
+    public GameObject collectedText;
+
+    private bool isDraging = false;
+    private Recipe currentRecipe;
+    private List<Grocery.GroceryType> collectedGroceries = new List<Grocery.GroceryType> { };
+
 
     void Start()
     {
@@ -17,10 +21,27 @@ public class Basket : MonoBehaviour
 
     void Update()
     {
+        if (isDraging && Input.touchCount != 1)
+        {
+            //if finger released - stop drag
+            isDraging = false;
+        }
+
         if (CheckIfSelected())
+        {
+            //init drag
+            isDraging = true;
+        }
+
+        if (isDraging)
         {
             MoveBasket();
         }
+    }
+
+    private void OnDrag()
+    {
+        MoveBasket();
     }
 
     private void MoveBasket()
@@ -49,7 +70,7 @@ public class Basket : MonoBehaviour
         {
             Grocery grocery = otherObject.GetComponent<Grocery>();
             OnGroceryTrigger(grocery);
-            otherObject.GetComponent<SpriteRenderer>().enabled = false; 
+            otherObject.GetComponent<SpriteRenderer>().enabled = false;
         }
     }
 
@@ -91,7 +112,7 @@ public class Basket : MonoBehaviour
     private void OnCorrectGroceryTrigger(Grocery grocery)
     {
         collectedGroceries.Add(grocery.groceryType);
-        healthBarPanel.GetComponent<HealthBar>().Heal(1);
+        collectedText.GetComponent<ScorePanel>().SetScore(collectedGroceries.Count);
     }
 
     private void OnIncorrectGroceryTrigger()
