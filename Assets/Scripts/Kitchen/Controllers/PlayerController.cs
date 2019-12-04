@@ -63,6 +63,10 @@ public class PlayerController : MonoBehaviour
                 // Loose points
             }
         }
+        else if (other.gameObject.CompareTag("Fly"))
+        {
+            Destroy(other.gameObject);
+        }
     }
 
     // When one of the tool button is pressed

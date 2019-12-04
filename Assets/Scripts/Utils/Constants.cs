@@ -8,6 +8,8 @@ public class Constants
     public static Color MORTARCOLOR = new Color(0.118f, 0.396f, 0.627f);
     public static Color GRATERCOLOR = new Color(0.988f, 0.318f, 0.369f);
     public static Color HANDCOLOR = new Color(0.996f, 0.843f, 0.69f);
+    public static float MAXSCREENWIDTH = 9.3f;
+    public static float MAXSCREENHEIGHT = 4.8f;
     public enum TOOLTYPE
     { 
         Knife,

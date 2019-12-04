@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Grocery
   - Despawner
+  - Fly
   layers:
   - Default
   - TransparentFX
