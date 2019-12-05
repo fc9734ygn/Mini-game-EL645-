@@ -5,14 +5,16 @@ using UnityEngine;
 public class GrocerySpawner : MonoBehaviour
 {
     public float spawnIntervalInSeconds; 
-    public float dropSpeed; 
+    public float initialDropSpeed; 
     public float maxX; 
     public float minX;
 
+    private float dropSpeed;
     private Object[] groceries;
 
     void Start()
     {
+        dropSpeed = initialDropSpeed;
         groceries = Resources.LoadAll("Prefab/Groceries", typeof(GameObject));
         StartCoroutine("Spawn");
     }

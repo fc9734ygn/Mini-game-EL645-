@@ -20,7 +20,7 @@ public class ScorePanel : MonoBehaviour
     private void UpdateDifficulty()
     {
         difficultyIndex++;
-        if (difficultyIndex == 10)
+        if (difficultyIndex == 5)
         {
             spawner.GetComponent<GrocerySpawner>().IncreaseDifficulty();
             difficultyIndex = 0;
