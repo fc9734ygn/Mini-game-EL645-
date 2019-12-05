@@ -29,18 +29,16 @@ public class FlyController : MonoBehaviour
 
     void Update()
     {
-        if (transform.position.x > Constants.MAXSCREENWIDTH || transform.position.x < -Constants.MAXSCREENWIDTH || transform.position.y > Constants.MAXSCREENHEIGHT || transform.position.y < -Constants.MAXSCREENHEIGHT)
-        {
-            transform.Rotate(new Vector3(0, 0, 180));
-        }
-        else if (transform.position.x < Constants.MAXSCREENWIDTH + minDist && transform.position.x > -Constants.MAXSCREENWIDTH - minDist && transform.position.y < Constants.MAXSCREENHEIGHT + minDist && transform.position.y > -Constants.MAXSCREENHEIGHT - minDist)
-        {
-            transform.Rotate(new Vector3(0, 0, rotationSpeed * Time.deltaTime));
-
-        }
-
+        transform.Rotate(new Vector3(0, 0, rotationSpeed * Time.deltaTime));
         transform.position += transform.up * movementSpeed * Time.deltaTime;
 
-
+    }
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Border"))
+        { 
+        transform.Rotate(new Vector3(0, 0, 180));
+        transform.position += 2 * transform.up * movementSpeed * Time.deltaTime;
+        }
     }
 }
