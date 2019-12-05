@@ -8,6 +8,9 @@ public class Basket : MonoBehaviour
     public GameObject healthBarPanel;
     public GameObject collectedText;
 
+    public AudioClip correctItemClip;
+    public AudioClip incorrectItemClip;
+
     private bool isDraging = false;
     private Recipe currentRecipe;
     private List<Grocery.GroceryType> collectedGroceries = new List<Grocery.GroceryType> { };
@@ -111,12 +114,33 @@ public class Basket : MonoBehaviour
 
     private void OnCorrectGroceryTrigger(Grocery grocery)
     {
+        PlayItemCollectedAudio(true);
         collectedGroceries.Add(grocery.groceryType);
         collectedText.GetComponent<ScorePanel>().SetScore(collectedGroceries.Count);
     }
 
     private void OnIncorrectGroceryTrigger()
     {
+        PlayItemCollectedAudio(false);
         healthBarPanel.GetComponent<HealthBar>().DealDamage(1);
+    }
+
+    private void PlayItemCollectedAudio(bool correct)
+    {
+        AudioClip clip;
+
+        if (correct)
+        {
+            clip = correctItemClip;
+        }
+        else
+        {
+            clip = incorrectItemClip;
+        }
+
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.clip = clip;
+        audio.Play();
+    
     }
 }
