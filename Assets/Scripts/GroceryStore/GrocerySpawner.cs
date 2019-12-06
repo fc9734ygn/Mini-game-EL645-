@@ -28,6 +28,7 @@ public class GrocerySpawner : MonoBehaviour
         GameObject prefab = groceries[randomIndex] as GameObject;
 
         GameObject spawnedObject = Instantiate(prefab, new Vector3(Random.Range(minX, maxX), transform.position.y, 0f), Quaternion.Euler(0, 0, 0)) as GameObject;
+        spawnedObject.GetComponent<Rigidbody2D>().gravityScale = 0;
         spawnedObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -dropSpeed));
 
         StartCoroutine("Spawn");
