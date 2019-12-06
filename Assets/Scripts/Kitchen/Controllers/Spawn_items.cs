@@ -6,11 +6,13 @@ public class Spawn_items : MonoBehaviour
 {
     public float spawnTime= 1;
 
-    public float upForce = 750; //Up force
-    public float leftRightForce = 200; //Left and right force
+    public float upForce = 680; //Up force
+    public float leftRightForce = 180; //Left and right force
     public float gravity = 1;
-    public float maxX = -10; //Max x spawn position
-    public float minX = 10; //Min x spawn position
+    public float maxX = 9; //Max x spawn position
+    public float minX = -9; //Min x spawn position
+    private int count = 0;
+    public GameObject flySpawner;
 
     private Object[] collectedGroceries;
 
@@ -49,7 +51,42 @@ public class Spawn_items : MonoBehaviour
             go.GetComponent<Rigidbody2D>().AddForce(new Vector2(leftRightForce, upForce));
         }
 
+        //Increase item count
+        count++;
+
+
+        IncreaseDifficulty2();
+
+
         // Start the spawn again
         StartCoroutine("Spawn");
+
+
+        
     }
+    private void IncreaseDifficulty2()
+    {
+        Debug.Log(count);
+        // Increase difficulty
+        if (count == 10)
+        {
+            spawnTime = 1.5f;
+        }
+        else if (count == 20)
+        {
+            Instantiate(flySpawner, new Vector3(0, 0, 0),
+            Quaternion.identity);
+        }
+        else if (count == 30)
+        {
+            spawnTime = 1;
+
+        }
+        else if (count == 40)
+        {
+            //
+        }
+    }
+
+
 }

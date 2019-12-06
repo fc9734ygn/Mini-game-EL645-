@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ColliderGenerator : MonoBehaviour
 {
-    public float colDepth = 4f;
+    public int colDepth = 1;
     public float zPosition = 0f;
     private Vector2 screenSize;
     private Transform topCollider;

@@ -11,18 +11,16 @@ public class FlyController : MonoBehaviour
 
     void Start()
     {
-        Invoke("ChangeRotation", rotationTime);
+       ChangeRotation();
     }
 
     void ChangeRotation()
     {
 
-        Debug.Log(rotationTime);
         if (Random.value > 0.5f)
         {
             rotationSpeed = -rotationSpeed;
         }
-        Invoke("ChangeRotation", rotationTime);
 
     }
 
