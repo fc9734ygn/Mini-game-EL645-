@@ -56,16 +56,17 @@ public class PlayerController : MonoBehaviour
             if(other.gameObject.GetComponent<Grocery>().tool == currentTool)
             {
                 // Get Points
-                Destroy(other.gameObject);
             }
             else
             {
                 // Loose points
             }
+            Destroy(other.gameObject);
+
         }
         else if (other.gameObject.CompareTag("Fly"))
         {
-            //Destroy(other.gameObject);
+            Destroy(other.gameObject);
         }
     }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spawn_Flies : MonoBehaviour
 {
-    public float spawnIntervalInSeconds=3;
+    public float spawnIntervalInSeconds=4;
     private int count;
 
     public GameObject fly;
@@ -32,9 +32,15 @@ public class Spawn_Flies : MonoBehaviour
             StartCoroutine("Spawn");
 
         }
+        else if (count <4)
+        {
+            GameObject spawnedObject = Instantiate(fly, new Vector3(-3 + Random.Range(-0.5f, 0.5f), -2 + Random.Range(-0.5f, 0.5f), 0f), Quaternion.Euler(0, 0, 0)) as GameObject;
+            StartCoroutine("Spawn");
+
+        }
         else
         {
-            GameObject spawnedObject = Instantiate(fly, new Vector3(Random.Range(-0.5f, 0.5f), -2 + Random.Range(-0.5f, 0.5f), 0f), Quaternion.Euler(0, 0, 0)) as GameObject;
+            GameObject spawnedObject = Instantiate(fly, new Vector3(3 + Random.Range(-0.5f, 0.5f), -2 + Random.Range(-0.5f, 0.5f), 0f), Quaternion.Euler(0, 0, 0)) as GameObject;
 
         }
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spawn_items : MonoBehaviour
 {
-    public float spawnTime= 1;
+    public float spawnTime= 3;
 
     public float upForce = 680; //Up force
     public float leftRightForce = 180; //Left and right force
@@ -13,6 +13,8 @@ public class Spawn_items : MonoBehaviour
     public float minX = -9; //Min x spawn position
     private int count = 0;
     public GameObject flySpawner;
+    public GameObject cockroach;
+
 
     private Object[] collectedGroceries;
 
@@ -68,24 +70,26 @@ public class Spawn_items : MonoBehaviour
     {
         Debug.Log(count);
         // Increase difficulty
-        if (count == 10)
+        switch (count)
         {
-            spawnTime = 1.5f;
+            case 10:
+                spawnTime = 2;
+                break;
+            case 20:
+                    Instantiate(flySpawner, new Vector3(0, 0, 0),
+                    Quaternion.identity);
+                break;
+            case 30:
+                spawnTime = 1.5f;
+                break;
+            case 40:
+                Instantiate(cockroach, new Vector3(0, 0, 0),
+                                    Quaternion.identity); break;
+            case 50:
+                spawnTime = 1.2f;
+                break;
         }
-        else if (count == 20)
-        {
-            Instantiate(flySpawner, new Vector3(0, 0, 0),
-            Quaternion.identity);
-        }
-        else if (count == 30)
-        {
-            spawnTime = 1;
 
-        }
-        else if (count == 40)
-        {
-            //
-        }
     }
 
 

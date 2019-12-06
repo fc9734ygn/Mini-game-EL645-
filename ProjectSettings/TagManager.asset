@@ -51,9 +51,6 @@ TagManager:
   - name: ToolButtons
     uniqueID: 2174871791
     locked: 0
-  - name: Groceries
-    uniqueID: 2210042209
-    locked: 0
   - name: Characters
     uniqueID: 2611099941
     locked: 0
@@ -68,6 +65,9 @@ TagManager:
     locked: 0
   - name: Interactables
     uniqueID: 1757884193
+    locked: 0
+  - name: Enemies
+    uniqueID: 446771495
     locked: 0
   - name: HUD
     uniqueID: 1922034603

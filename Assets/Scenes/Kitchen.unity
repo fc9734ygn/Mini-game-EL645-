@@ -1442,6 +1442,7 @@ MonoBehaviour:
   minX: -9
   flySpawner: {fileID: 5756269587903036083, guid: 01822d93a6b084e19aa2aedf30075e04,
     type: 3}
+  cockroach: {fileID: 0}
 --- !u!4 &1861209404
 Transform:
   m_ObjectHideFlags: 0
@@ -1523,7 +1524,7 @@ TrailRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1757884193
-  m_SortingLayer: 8
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Time: 0.2
   m_Parameters:
@@ -1707,6 +1708,7 @@ GameObject:
   - component: {fileID: 2130409035}
   - component: {fileID: 2130409034}
   - component: {fileID: 2130409033}
+  - component: {fileID: 2130409037}
   m_Layer: 5
   m_Name: ButtonCanvas
   m_TagString: Untagged
@@ -1794,6 +1796,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &2130409037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130409032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b63dd6e0f244c6598e1eeaadcc44af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 150
+  movementSpeed: 6
+  changeTime: 1
 --- !u!1001 &4914659523400736654
 PrefabInstance:
   m_ObjectHideFlags: 0
