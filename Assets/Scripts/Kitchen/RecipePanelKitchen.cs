@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RecipePanel : MonoBehaviour
+public class RecipePanelKitchen : MonoBehaviour
 {
     public GameObject recipeTitleUI;
     public GameObject gridItemPrefab;
@@ -14,8 +14,11 @@ public class RecipePanel : MonoBehaviour
 
     //List because unity editor don't support dictionaries
     [SerializeField] public List<GrocerySpritesEntry> grocerySprites;
-    //used to map grocery types to corresponding sprites
+    [SerializeField] public List<ToolSpritesEntry> toolSprites;
+
+    //used to map grocery types and tool types to corresponding sprites
     private Dictionary<Grocery.GroceryType, Sprite> grocerySpriteLookup;
+    private Dictionary<Constants.TOOLTYPE, Sprite> toolSpriteLookup;
 
     [Serializable]
     public class GrocerySpritesEntry
@@ -24,19 +27,26 @@ public class RecipePanel : MonoBehaviour
         public Sprite sprite;
     }
 
+    [Serializable]
+    public class ToolSpritesEntry
+    {
+        public Constants.TOOLTYPE type;
+        public Sprite sprite;
+    }
+
     private void Start()
     {
         //TODO: remove dummy data
         // SetCurrentRecipe() should be called from outside of the class at the start of the scene
         var recipe = new Recipe("Spaghetti aglio e olio",
-             new List<Grocery> {
+            new List<Grocery> {
             new Grocery(Constants.TOOLTYPE.Knife,Grocery.GroceryType.Bacon),
             new Grocery(Constants.TOOLTYPE.Knife,Grocery.GroceryType.Tomato),
             new Grocery(Constants.TOOLTYPE.Mortar,Grocery.GroceryType.Parsley),
             new Grocery(Constants.TOOLTYPE.Grater,Grocery.GroceryType.Cheese),
             new Grocery(Constants.TOOLTYPE.Hand,Grocery.GroceryType.Oil)
-             }
-         );
+            }
+        );
 
         SetCurrentRecipe(recipe);
     }
@@ -62,33 +72,47 @@ public class RecipePanel : MonoBehaviour
         recipeTitleUI.GetComponent<TextMeshProUGUI>().SetText(currentRecipe.title);
         InitGrid();
     }
-    
+
     private void InitGrid()
     {
-        foreach(Grocery grocery in currentRecipe.ingredients)
+        foreach (Grocery grocery in currentRecipe.ingredients)
         {
-            SpawnGridItem(grocery.groceryType);
+            SpawnGridItem(grocery);
         }
     }
 
-    private void SpawnGridItem(Grocery.GroceryType groceryType)
+    private void SpawnGridItem(Grocery grocery)
     {
         GameObject newGridItem = Instantiate(gridItemPrefab);
 
-        newGridItem.GetComponent<Image>().sprite = grocerySpriteLookup[groceryType];
+        GameObject groceryIcon = newGridItem.transform.Find("GroceryImage").gameObject;
+        GameObject toolIcon = newGridItem.transform.Find("ToolImage").gameObject;
+
+        Debug.Log(groceryIcon);
+        Debug.Log(toolIcon);
+
+
+        groceryIcon.GetComponent<Image>().sprite = grocerySpriteLookup[grocery.groceryType];
+        toolIcon.GetComponent<Image>().sprite = toolSpriteLookup[grocery.tool];
+
         newGridItem.transform.SetParent(gridLayout.transform, false);
         newGridItem.transform.localScale = new Vector3(1, 1, 1);
         newGridItem.transform.localPosition = Vector3.zero;
-        newGridItem.GetComponentInChildren<TextMeshProUGUI>().SetText(groceryType.ToString());
     }
 
     private void AssignSprites()
     {
         grocerySpriteLookup = new Dictionary<Grocery.GroceryType, Sprite>();
+        toolSpriteLookup = new Dictionary<Constants.TOOLTYPE, Sprite>();
 
         foreach (GrocerySpritesEntry entry in grocerySprites)
         {
             grocerySpriteLookup.Add(entry.type, entry.sprite);
+        }
+
+        foreach (ToolSpritesEntry entry in toolSprites)
+        {
+            toolSpriteLookup.Add(entry.type, entry.sprite);
         }
     }
 }

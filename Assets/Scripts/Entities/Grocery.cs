@@ -7,6 +7,11 @@ public class Grocery : MonoBehaviour
     public Constants.TOOLTYPE tool;
     public GroceryType groceryType;
 
+    public Grocery(Constants.TOOLTYPE tool, GroceryType groceryType)
+    {
+        this.tool = tool;
+        this.groceryType = groceryType;
+    }
 
     public enum GroceryType
     {

@@ -79,7 +79,7 @@ public class Basket : MonoBehaviour
 
     private void OnGroceryTrigger(Grocery grocery)
     {
-        bool correctGrocery = CheckIfCorrectGrocery(grocery.groceryType);
+        bool correctGrocery = CheckIfCorrectGrocery(grocery);
         if (correctGrocery)
         {
             OnCorrectGroceryTrigger(grocery);
@@ -90,14 +90,14 @@ public class Basket : MonoBehaviour
         }
     }
 
-    private bool CheckIfCorrectGrocery(Grocery.GroceryType groceryType)
+    private bool CheckIfCorrectGrocery(Grocery grocery)
     {
         if (currentRecipe == null)
         {
             GetCurrentRecipe();
         }
 
-        if (currentRecipe.ingredients.Contains(groceryType))
+        if (currentRecipe.GetGroceryTypes().Contains(grocery.groceryType))
         {
             return true;
         }
