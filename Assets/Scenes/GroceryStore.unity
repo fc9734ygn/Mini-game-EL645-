@@ -1893,9 +1893,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2317744052210664835, guid: d449bf9b2c4553245972a36b664eb5eb,
         type: 3}
+      propertyPath: grocerySprites.Array.size
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2317744052210664835, guid: d449bf9b2c4553245972a36b664eb5eb,
+        type: 3}
       propertyPath: gridItemPrefab
       value: 
       objectReference: {fileID: 7782983380609829935, guid: 20c93d2ea3e8a634e9f63ede6c857fd9,
+        type: 3}
+    - target: {fileID: 2317744052210664835, guid: d449bf9b2c4553245972a36b664eb5eb,
+        type: 3}
+      propertyPath: grocerySprites.Array.data[13].type
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2317744052210664835, guid: d449bf9b2c4553245972a36b664eb5eb,
+        type: 3}
+      propertyPath: grocerySprites.Array.data[13].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72db0e9de4fcbd74491aa6d34da3a18b,
+        type: 3}
+    - target: {fileID: 2317744052210664835, guid: d449bf9b2c4553245972a36b664eb5eb,
+        type: 3}
+      propertyPath: grocerySprites.Array.data[14].type
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2317744052210664835, guid: d449bf9b2c4553245972a36b664eb5eb,
+        type: 3}
+      propertyPath: grocerySprites.Array.data[14].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b66d173f45c67ef4188388802b57e18e,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d449bf9b2c4553245972a36b664eb5eb, type: 3}
