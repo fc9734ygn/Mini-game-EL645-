@@ -766,7 +766,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -1140,7 +1140,7 @@ PrefabInstance:
     - target: {fileID: 8816157924807353947, guid: 3fb25b155b1be2448a1ac1560fa7ec17,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8816157924807353947, guid: 3fb25b155b1be2448a1ac1560fa7ec17,
         type: 3}
@@ -1736,7 +1736,8 @@ MonoBehaviour:
   minX: -9
   flySpawner: {fileID: 5756269587903036083, guid: 01822d93a6b084e19aa2aedf30075e04,
     type: 3}
-  cockroach: {fileID: 0}
+  cockroach: {fileID: 8294949629623292554, guid: 7eb35cf8520bb44ceb11a40c5b77eeb2,
+    type: 3}
 --- !u!4 &1861209404
 Transform:
   m_ObjectHideFlags: 0
