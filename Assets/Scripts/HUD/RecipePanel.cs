@@ -14,6 +14,7 @@ public class RecipePanel : MonoBehaviour
 
     //List because unity editor don't support dictionaries
     [SerializeField] public List<GrocerySpritesEntry> grocerySprites;
+
     //used to map grocery types to corresponding sprites
     private Dictionary<Grocery.GroceryType, Sprite> grocerySpriteLookup;
 
@@ -26,18 +27,7 @@ public class RecipePanel : MonoBehaviour
 
     private void Start()
     {
-        //TODO: remove dummy data
-        // SetCurrentRecipe() should be called from outside of the class at the start of the scene
-        var recipe = new Recipe("Spaghetti aglio e olio",
-             new List<Grocery> {
-            new Grocery(Constants.TOOLTYPE.Knife,Grocery.GroceryType.Bacon),
-            new Grocery(Constants.TOOLTYPE.Knife,Grocery.GroceryType.Tomato),
-            new Grocery(Constants.TOOLTYPE.Mortar,Grocery.GroceryType.Parsley),
-            new Grocery(Constants.TOOLTYPE.Grater,Grocery.GroceryType.Cheese),
-            new Grocery(Constants.TOOLTYPE.Hand,Grocery.GroceryType.Oil)
-             }
-         );
-
+        var recipe = RecipeGenerator.GetRandomRecipe();
         SetCurrentRecipe(recipe);
     }
 
