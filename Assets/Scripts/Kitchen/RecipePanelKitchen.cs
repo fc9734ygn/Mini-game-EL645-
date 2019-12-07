@@ -36,19 +36,7 @@ public class RecipePanelKitchen : MonoBehaviour
 
     private void Start()
     {
-        //TODO: remove dummy data
-        // SetCurrentRecipe() should be called from outside of the class at the start of the scene
-        var recipe = new Recipe("Spaghetti aglio e olio",
-            new List<Grocery> {
-            new Grocery(Constants.TOOLTYPE.Knife,Grocery.GroceryType.Bacon),
-            new Grocery(Constants.TOOLTYPE.Knife,Grocery.GroceryType.Tomato),
-            new Grocery(Constants.TOOLTYPE.Mortar,Grocery.GroceryType.Parsley),
-            new Grocery(Constants.TOOLTYPE.Grater,Grocery.GroceryType.Cheese),
-            new Grocery(Constants.TOOLTYPE.Hand,Grocery.GroceryType.Oil)
-            }
-        );
-
-        SetCurrentRecipe(recipe);
+        SetCurrentRecipe(Basket.currentRecipe);
     }
 
     private void Awake()
@@ -87,10 +75,6 @@ public class RecipePanelKitchen : MonoBehaviour
 
         GameObject groceryIcon = newGridItem.transform.Find("GroceryImage").gameObject;
         GameObject toolIcon = newGridItem.transform.Find("ToolImage").gameObject;
-
-        Debug.Log(groceryIcon);
-        Debug.Log(toolIcon);
-
 
         groceryIcon.GetComponent<Image>().sprite = grocerySpriteLookup[grocery.groceryType];
         toolIcon.GetComponent<Image>().sprite = toolSpriteLookup[grocery.tool];

@@ -12,8 +12,8 @@ public class Basket : MonoBehaviour
     public AudioClip incorrectItemClip;
 
     private bool isDraging = false;
-    private Recipe currentRecipe;
-    private List<Grocery.GroceryType> collectedGroceries = new List<Grocery.GroceryType> { };
+    public static Recipe currentRecipe;
+    public static List<Grocery.GroceryType> collectedGroceries = new List<Grocery.GroceryType> { };
 
 
     void Start()

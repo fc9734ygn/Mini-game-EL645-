@@ -68,7 +68,7 @@ public class Spawn_items : MonoBehaviour
     }
     private void IncreaseDifficulty2()
     {
-        Debug.Log(count);
+        
         // Increase difficulty
         switch (count)
         {
