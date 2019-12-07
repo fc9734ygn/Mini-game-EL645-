@@ -26,7 +26,7 @@ public class CockroachController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Random.value < 0.1f)
+        if (Random.value < 0.05f)
         {
             if (FindClosestGrocery())
             {

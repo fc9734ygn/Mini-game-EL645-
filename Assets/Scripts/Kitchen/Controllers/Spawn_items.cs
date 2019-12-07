@@ -82,9 +82,23 @@ public class Spawn_items : MonoBehaviour
             case 30:
                 spawnTime = 1.5f;
                 break;
+            case 39:
+                GameObject[] flies;
+                flies = GameObject.FindGameObjectsWithTag("Fly");
+                if (flies.Length > 0)
+                {
+                    foreach (GameObject go in flies)
+                    {
+                        Destroy(go);
+                    }
+                }
+                break;
             case 40:
+
                 Instantiate(cockroach, new Vector3(0, 0, 0),
-                                    Quaternion.identity); break;
+                                    Quaternion.identity); 
+                    break;
+
             case 50:
                 spawnTime = 1.2f;
                 break;
