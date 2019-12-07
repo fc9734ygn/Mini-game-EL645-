@@ -1095,6 +1095,11 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 4019744369277273272, guid: 1e8ac7fc5af08db4cb662af79abc2b87,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.25
+      objectReference: {fileID: 0}
     - target: {fileID: 5458371378745728107, guid: 1e8ac7fc5af08db4cb662af79abc2b87,
         type: 3}
       propertyPath: healthBarPanel
