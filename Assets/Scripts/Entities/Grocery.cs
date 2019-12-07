@@ -28,6 +28,8 @@ public class Grocery : MonoBehaviour
         Oil,
         Pasta,
         Bacon,
+        Eggs,
+        Butter,
         Other //random items
     }
 }
