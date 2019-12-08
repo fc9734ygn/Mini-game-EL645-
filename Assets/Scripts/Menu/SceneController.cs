@@ -7,31 +7,31 @@ public class SceneController : MonoBehaviour
 {
     public void LoadGroceryScene()
     {
-        SceneManager.LoadScene("GroceryStore", LoadSceneMode.Single);
+        LoadingScreen.Instance.Show(SceneManager.LoadSceneAsync("GroceryStore"));
     }
 
     public void LoadKitchenScene()
     {
-        SceneManager.LoadScene("Kitchen", LoadSceneMode.Single);
+        LoadingScreen.Instance.Show(SceneManager.LoadSceneAsync("Kitchen"));
     }
 
     public void LoadTutorialScene()
     {
-        SceneManager.LoadScene("Tutorial", LoadSceneMode.Single);
+        LoadingScreen.Instance.Show(SceneManager.LoadSceneAsync("Tutorial"));
     }
 
     public void LoadHighScoresScene()
     {
-        SceneManager.LoadScene("Highscores", LoadSceneMode.Single);
+        LoadingScreen.Instance.Show(SceneManager.LoadSceneAsync("Highscores"));
     }
 
     public void LoadCreditsScene()
     {
-        SceneManager.LoadScene("Credits", LoadSceneMode.Single);
+        LoadingScreen.Instance.Show(SceneManager.LoadSceneAsync("Credits"));
     }
 
     public void LoadMenu()
     {
-        SceneManager.LoadScene("Menu", LoadSceneMode.Single);
+        LoadingScreen.Instance.Show(SceneManager.LoadSceneAsync("Menu"));
     }
 }

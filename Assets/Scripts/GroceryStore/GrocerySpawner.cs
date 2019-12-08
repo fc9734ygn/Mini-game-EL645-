@@ -9,6 +9,9 @@ public class GrocerySpawner : MonoBehaviour
     public float maxX; 
     public float minX;
 
+    public float maxDropSpeed;
+    public float minInterval;
+
     private float dropSpeed;
     private Object[] groceries;
 
@@ -30,13 +33,21 @@ public class GrocerySpawner : MonoBehaviour
         GameObject spawnedObject = Instantiate(prefab, new Vector3(Random.Range(minX, maxX), transform.position.y, 0f), Quaternion.Euler(0, 0, 0)) as GameObject;
         spawnedObject.GetComponent<Rigidbody2D>().gravityScale = 0;
         spawnedObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -dropSpeed));
-
+       
         StartCoroutine("Spawn");
     }
 
     public void IncreaseDifficulty()
     {
-        dropSpeed = dropSpeed + 50;
-        spawnIntervalInSeconds = spawnIntervalInSeconds - 0.1f;
+        if (dropSpeed < maxDropSpeed)
+        {
+            dropSpeed = dropSpeed + 25;
+        }
+
+        if(spawnIntervalInSeconds > minInterval)
+        {
+            spawnIntervalInSeconds = spawnIntervalInSeconds - 0.075f;
+
+        }
     }
 }

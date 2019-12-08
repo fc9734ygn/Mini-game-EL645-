@@ -503,6 +503,8 @@ MonoBehaviour:
   initialDropSpeed: 200
   maxX: -7
   minX: 7
+  maxDropSpeed: 500
+  minInterval: 0.5
 --- !u!4 &537679756
 Transform:
   m_ObjectHideFlags: 0

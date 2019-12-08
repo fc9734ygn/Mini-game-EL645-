@@ -15,9 +15,9 @@ public static class RecipeGenerator
                     new List<Grocery> {
                         new Grocery(Constants.TOOLTYPE.Knife, Grocery.GroceryType.Onion),
                         new Grocery(Constants.TOOLTYPE.Knife, Grocery.GroceryType.Tomato),
+                        new Grocery(Constants.TOOLTYPE.Mortar, Grocery.GroceryType.Basil),
                         new Grocery(Constants.TOOLTYPE.Grater, Grocery.GroceryType.Cheese),
                         new Grocery(Constants.TOOLTYPE.Hand, Grocery.GroceryType.Oil),
-                        new Grocery(Constants.TOOLTYPE.Mortar, Grocery.GroceryType.Basil),
                         new Grocery(Constants.TOOLTYPE.Hand, Grocery.GroceryType.Pasta)
                     });
                 break;

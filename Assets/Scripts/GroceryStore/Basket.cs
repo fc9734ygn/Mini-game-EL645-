@@ -13,13 +13,12 @@ public class Basket : MonoBehaviour
 
     private bool isDraging = false;
     public static Recipe currentRecipe;
-    public static List<Grocery.GroceryType> collectedGroceries = new List<Grocery.GroceryType> { };
+    public static List<Grocery.GroceryType> collectedGroceries;
 
 
     void Start()
     {
-        Screen.orientation = ScreenOrientation.Landscape;
-        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+        collectedGroceries = new List<Grocery.GroceryType> { };
     }
 
     void Update()
