@@ -1,18 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ScoreCounter : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private int score = 0;
+
+    private void Start()
     {
-        
+        SetScore(score);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetScore(int newScore)
     {
-        
+        score = newScore;
+        gameObject.GetComponent<TextMeshProUGUI>().SetText("Score: " + score);
     }
+
+  
 }

@@ -7,20 +7,36 @@ public class PlayerController : MonoBehaviour
 {
     private Constants.TOOLTYPE currentTool = Constants.TOOLTYPE.Knife;
     TrailRenderer myTrailRenderer;
-
+    // Score counter
     public GameObject scoreBoard;
+    // Score
     private int scoreCount;
+    // AudioSource component
+    private AudioSource audioSource;
+    // Audio Clips
+    public AudioClip knifeAudio;
+    public AudioClip handAudio;
+    public AudioClip mortarAudio;
+    public AudioClip graterAudio;
+    public AudioClip errorAudio;
+    public AudioClip buttonAudio;
+    private AudioClip currentAudio;
 
-
-
-    void Start()
+     void Start()
     {
+        // Initiate score
         scoreCount = 0;
+        // Get Audio Source
+        audioSource = GetComponent<AudioSource>();
+        // Initiate current audio clip
+        currentAudio = knifeAudio;
+        // Get Trail Renderer
         myTrailRenderer = GetComponent<TrailRenderer>();
+        // Get screen orientation
         Screen.orientation = ScreenOrientation.Landscape;
+        // Prevent phone screen from "sleeping"
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         UpdateState();
-        
     }
 
     void Update()
@@ -30,7 +46,7 @@ public class PlayerController : MonoBehaviour
 
     private void TrackCursor()
     {
-
+        // If finger identified
         if (Input.touchCount == 1)
         {
 
@@ -74,26 +90,26 @@ public class PlayerController : MonoBehaviour
                 scoreCount += 5;
 
             }
+            audioSource.clip = currentAudio;
+            audioSource.Play();
             Destroy(other.gameObject);
-            scoreBoard.SetScore(scoreCount);
-
-
-
+            scoreBoard.gameObject.GetComponent<ScoreCounter>().SetScore(scoreCount);
         }
         else if (other.gameObject.CompareTag("Fly"))
         {
             scoreCount  -= 15;
-            scoreBoard.SetScore(scoreCount);
+            scoreBoard.gameObject.GetComponent<ScoreCounter>().SetScore(scoreCount);
+            audioSource.clip = errorAudio;
+            audioSource.Play();
         }
-
     }
 
-    // When one of the tool button is pressed
-    public void ToolButtonPressed(int tool)
+        // When one of the tool button is pressed
+        public void ToolButtonPressed(int tool)
     {
         // Change the current tool and call change state
         currentTool = (Constants.TOOLTYPE)tool;
-        Debug.Log(tool);
+
 
         UpdateState();
     }
@@ -101,39 +117,42 @@ public class PlayerController : MonoBehaviour
 
 
 
-    // Changes the player's sprite and collision sound
+    // Changes the trail renderer colour and sound effect on selection
     private void UpdateState()
     { 
         switch(currentTool)
         {
-
             case Constants.TOOLTYPE.Knife:
-                // change sound effect
+                // change trail renderer colour
                 myTrailRenderer.startColor = Constants.KNIFECOLOR;
                 myTrailRenderer.endColor = Constants.KNIFECOLOR;
-
+                // change sound effect
+                currentAudio = knifeAudio;
                 break;
             case Constants.TOOLTYPE.Mortar:
-                // change sound effect
+                // change trail renderer colour
                 myTrailRenderer.startColor = Constants.MORTARCOLOR;
                 myTrailRenderer.endColor = Constants.MORTARCOLOR;
-
+                // change sound effect
+                currentAudio = mortarAudio;
                 break;
             case Constants.TOOLTYPE.Grater:
-                // change sound effect
+                // change trail renderer colour
                 myTrailRenderer.startColor = Constants.GRATERCOLOR;
                 myTrailRenderer.endColor = Constants.GRATERCOLOR;
-
+                // change sound effect
+                currentAudio = graterAudio;
                 break;
             case Constants.TOOLTYPE.Hand:
-                // change sound effect
+                // change trail renderer colour
                 myTrailRenderer.startColor = Constants.HANDCOLOR;
                 myTrailRenderer.endColor = Constants.HANDCOLOR;
+                // change sound effect
+                currentAudio = handAudio;
                 break;
-
         }
+        audioSource.clip = buttonAudio;
+        audioSource.Play();
 
     }
-
-
 }
