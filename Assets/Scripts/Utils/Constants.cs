@@ -16,7 +16,6 @@ public class Constants
     public static string RECIPE_1 = "Spaghetti Bolognese";
     public static string RECIPE_2 = "Spaghetti Carbonara";
     public static string RECIPE_3 = "Spaghetti Aglio e Olio";
-    public const float MIN_TIME_TO_SHOW_LOADING_SCREEN_IN_SECONDS = 5f;
 
     public enum TOOLTYPE
     { 

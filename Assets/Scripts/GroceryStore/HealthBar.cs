@@ -12,6 +12,7 @@ public class HealthBar : MonoBehaviour
     public Image icon1;
     public Image icon2;
     public GameObject sceneController;
+    public GameObject spawner;
 
     public int currentHealth;
 
@@ -32,8 +33,18 @@ public class HealthBar : MonoBehaviour
        
         if (currentHealth < 1)
         {
-            //TODO: pass collected items
+            DeleteMidAirGroceries();
+            spawner.SetActive(false);
             sceneController.GetComponent<SceneController>().LoadKitchenScene();
+        }
+    }
+
+    private void DeleteMidAirGroceries()
+    {
+        GameObject[] midAirGroceries = GameObject.FindGameObjectsWithTag("Grocery");
+        foreach (GameObject grocery in midAirGroceries)
+        {
+            Destroy(grocery);
         }
     }
 

@@ -386,6 +386,7 @@ MonoBehaviour:
   loadingText: {fileID: 1211415739}
   groceries: {fileID: 480388581}
   groceryRotationSpeed: 100
+  minLoadingTimeInSeconds: 2
 --- !u!1 &389522030
 GameObject:
   m_ObjectHideFlags: 0

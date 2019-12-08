@@ -9,7 +9,8 @@ public class LoadingScreen : MonoBehaviour
     public static LoadingScreen Instance;
     public GameObject loadingText;
     public GameObject groceries;
-    public float groceryRotationSpeed = 150;
+    public float groceryRotationSpeed;
+    public float minLoadingTimeInSeconds;
 
     // The reference to the current loading operation running in the background:
     private AsyncOperation currentLoadingOperation;
@@ -38,14 +39,7 @@ public class LoadingScreen : MonoBehaviour
 
         Hide();
     }
-
-    private void Start()
-    {
-        Canvas canvas = GetComponent<Canvas>();
-        canvas.renderMode = RenderMode.ScreenSpaceCamera;
-        canvas.worldCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
-    }
-
+   
     private void Update()
     {
         // If the loading is complete, hide the loading screen:
@@ -57,7 +51,7 @@ public class LoadingScreen : MonoBehaviour
         {
             rotateGrocery(groceries);
             timeElapsed += Time.deltaTime;
-            if (timeElapsed >= Constants.MIN_TIME_TO_SHOW_LOADING_SCREEN_IN_SECONDS)
+            if (timeElapsed >= minLoadingTimeInSeconds)
             {
                 // The loading screen has been showing for the minimum time required.
                 // Allow the loading operation to formally finish:
@@ -78,15 +72,17 @@ public class LoadingScreen : MonoBehaviour
 
         // Stop the loading operation from finishing, even if it technically did:
         currentLoadingOperation.allowSceneActivation = false;
-      
+
         // Reset the time elapsed:
         timeElapsed = 0f;
 
         isLoading = true;
 
         // Start loading text animation
-        StartCoroutine(LoadingTextCoroutine());
-       
+        StartCoroutine(LoadingTextAnimation());
+        groceries.SetActive(true);
+
+
     }
 
     // Call this to hide it:
@@ -96,12 +92,15 @@ public class LoadingScreen : MonoBehaviour
         gameObject.SetActive(false);
         currentLoadingOperation = null;
         isLoading = false;
+
+        Canvas canvas = GetComponent<Canvas>();
+        canvas.worldCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
     }
 
-    IEnumerator LoadingTextCoroutine()
+    IEnumerator LoadingTextAnimation()
     {
         TextMeshProUGUI text = loadingText.GetComponent<TextMeshProUGUI>();
-        
+
         text.SetText("Loading.");
         yield return new WaitForSeconds(0.25f);
         text.SetText("Loading..");
@@ -109,9 +108,9 @@ public class LoadingScreen : MonoBehaviour
         text.SetText("Loading...");
         yield return new WaitForSeconds(0.25f);
 
-        StartCoroutine(LoadingTextCoroutine());
+        StartCoroutine(LoadingTextAnimation());
     }
-    
+
     private void rotateGrocery(GameObject grocery)
     {
         grocery.transform.Rotate(new Vector3(0, 0, -groceryRotationSpeed * Time.deltaTime));

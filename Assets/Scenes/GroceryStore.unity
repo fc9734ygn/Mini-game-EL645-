@@ -1650,6 +1650,7 @@ MonoBehaviour:
   icon1: {fileID: 762743415}
   icon2: {fileID: 775385884}
   sceneController: {fileID: 1032108323}
+  spawner: {fileID: 537679754}
   currentHealth: 3
 --- !u!114 &2007382858
 MonoBehaviour:
