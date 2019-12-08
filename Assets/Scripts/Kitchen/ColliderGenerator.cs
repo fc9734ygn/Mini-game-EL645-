@@ -12,20 +12,20 @@ public class ColliderGenerator : MonoBehaviour
     private Transform leftCollider;
     private Transform rightCollider;
     private Vector3 cameraPos;
-    // Use this for initialization
-    void Start()
+
+        void Start()
     {
-        //Generate our empty objects
+        // Generate empty objects
         topCollider = new GameObject().transform;
         bottomCollider = new GameObject().transform;
         rightCollider = new GameObject().transform;
         leftCollider = new GameObject().transform;
 
-        //Name our objects 
-        topCollider.name = "TopCollider";
-        bottomCollider.name = "BottomCollider";
-        rightCollider.name = "RightCollider";
-        leftCollider.name = "LeftCollider";
+        // Name objects 
+        topCollider.name = "Top";
+        bottomCollider.name = "Bottom";
+        rightCollider.name = "Right";
+        leftCollider.name = "Left";
 
         // Tag objects
         topCollider.tag = "Border";
@@ -33,24 +33,24 @@ public class ColliderGenerator : MonoBehaviour
         rightCollider.tag = "Border";
         leftCollider.tag = "Border";
 
-        //Add the colliders
+        // Add the colliders
         topCollider.gameObject.AddComponent<BoxCollider2D>();
         bottomCollider.gameObject.AddComponent<BoxCollider2D>();
         rightCollider.gameObject.AddComponent<BoxCollider2D>();
         leftCollider.gameObject.AddComponent<BoxCollider2D>();
 
-        //Make them the child of whatever object this script is on, preferably on the Camera so the objects move with the camera without extra scripting
+        // Make them childs of camera
         topCollider.parent = transform;
         bottomCollider.parent = transform;
         rightCollider.parent = transform;
         leftCollider.parent = transform;
 
-        //Generate world space point information for position and scale calculations
+        // Get screen size
         cameraPos = Camera.main.transform.position;
-        screenSize.x = Vector2.Distance(Camera.main.ScreenToWorldPoint(new Vector2(0, 0)), Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, 0))) * 0.5f;
-        screenSize.y = Vector2.Distance(Camera.main.ScreenToWorldPoint(new Vector2(0, 0)), Camera.main.ScreenToWorldPoint(new Vector2(0, Screen.height))) * 0.5f;
+        screenSize.y = Vector2.Distance(Camera.main.ScreenToWorldPoint(new Vector2(0, 0)), Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, 0))) * 0.5f;
+        screenSize.x = Vector2.Distance(Camera.main.ScreenToWorldPoint(new Vector2(0, 0)), Camera.main.ScreenToWorldPoint(new Vector2(0, Screen.height))) * 0.5f;
 
-        //Change our scale and positions to match the edges of the screen...   
+        // Scale and position colliders to match the edges of the screen 
         rightCollider.localScale = new Vector3(colDepth, screenSize.y * 2, colDepth);
         rightCollider.position = new Vector3(cameraPos.x + screenSize.x + (rightCollider.localScale.x * 0.5f), cameraPos.y, zPosition);
         leftCollider.localScale = new Vector3(colDepth, screenSize.y * 2, colDepth);
