@@ -8,14 +8,19 @@ public class PlayerController : MonoBehaviour
     private Constants.TOOLTYPE currentTool = Constants.TOOLTYPE.Knife;
     TrailRenderer myTrailRenderer;
 
+    public GameObject scoreBoard;
+    private int scoreCount;
+
 
 
     void Start()
     {
+        scoreCount = 0;
         myTrailRenderer = GetComponent<TrailRenderer>();
         Screen.orientation = ScreenOrientation.Landscape;
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         UpdateState();
+        
     }
 
     void Update()
@@ -35,10 +40,15 @@ public class PlayerController : MonoBehaviour
             }
 
             gameObject.SetActive(true);
+            gameObject.GetComponent<CircleCollider2D>().enabled = true;
+            gameObject.GetComponent<TrailRenderer>().enabled = true;
+
+
         }
         else
         {
-            gameObject.SetActive(false);
+            gameObject.GetComponent<CircleCollider2D>().enabled = false;
+            gameObject.GetComponent<TrailRenderer>().enabled = false;
         }
     }
 
@@ -56,18 +66,26 @@ public class PlayerController : MonoBehaviour
             if(other.gameObject.GetComponent<Grocery>().tool == currentTool)
             {
                 // Get Points
+                scoreCount += 15;
             }
             else
             {
                 // Loose points
+                scoreCount += 5;
+
             }
             Destroy(other.gameObject);
+            scoreBoard.SetScore(scoreCount);
+
+
 
         }
         else if (other.gameObject.CompareTag("Fly"))
         {
-            Destroy(other.gameObject);
+            scoreCount  -= 15;
+            scoreBoard.SetScore(scoreCount);
         }
+
     }
 
     // When one of the tool button is pressed
