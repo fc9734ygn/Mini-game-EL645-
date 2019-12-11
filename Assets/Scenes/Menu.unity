@@ -2352,6 +2352,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 963178652}
+    - target: {fileID: 4684761725562251775, guid: 27d8b4c11d6adc14588556fe7f65ace4,
+        type: 3}
+      propertyPath: minLoadingTimeInSeconds
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4684761725451076281, guid: 27d8b4c11d6adc14588556fe7f65ace4,
         type: 3}
       propertyPath: m_LocalScale.x

@@ -95,7 +95,7 @@ public class Basket : MonoBehaviour
         {
             GetCurrentRecipe();
         }
-
+   
         if (currentRecipe.GetGroceryTypes().Contains(grocery.groceryType))
         {
             return true;

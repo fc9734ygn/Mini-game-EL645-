@@ -35,7 +35,14 @@ public class HealthBar : MonoBehaviour
         {
             DeleteMidAirGroceries();
             spawner.SetActive(false);
-            sceneController.GetComponent<SceneController>().LoadKitchenScene();
+            if(Basket.collectedGroceries.Count > 0)
+            {
+                sceneController.GetComponent<SceneController>().LoadKitchenScene();
+            }
+            else
+            {
+                sceneController.GetComponent<SceneController>().LoadGameOver();
+            }
         }
     }
 
