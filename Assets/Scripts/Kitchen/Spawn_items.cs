@@ -3,33 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class Spawn_items : MonoBehaviour
 {
-    // Spawning variables
-    public float spawnTime= 3;
+    public float spawnTime = 3;
+
     public float upForce = 680; //Up force
     public float leftRightForce = 180; //Left and right force
     public float gravity = 1;
     public float maxX = 9; //Max x spawn position
     public float minX = -9; //Min x spawn position
-
+    private int count = 0;
+    public GameObject flySpawner;
+    public GameObject cockroach;
     public GameObject sceneManager;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Spawn_items : MonoBehaviour
-{
-    public float spawnTime= 3;
-
-    public float upForce = 680; //Up force
-    public float leftRightForce = 180; //Left and right force
-    public float gravity = 1;
-    public float maxX = 9; //Max x spawn position
-    public float minX = -9; //Min x spawn position
-    private int count = 0;
-    public GameObject flySpawner;
-    public GameObject cockroach;
 
     // List of collected groceries
     private List<GameObject> collectedGroceries;
@@ -41,36 +29,6 @@ public class Spawn_items : MonoBehaviour
     // Used to map grocery types to corresponding sprites
     private Dictionary<Grocery.GroceryType, GameObject> groceryPrefabLookup;
 
-    [Serializable]
-    public class GroceryEntry
-    {
-        public Grocery.GroceryType type;
-        public GameObject prefab;
-    }
-
-
-
-    // Assigning Prefabs
-    void Awake()
-    {
-        AssignPrefabs();
-    }
-
-    // Spawned grocery count
-    private int count = 0;
-
-    // Enemies to be spawned
-    public GameObject flySpawner;
-    public GameObject cockroach;
-
-    // List of collected groceries
-    private List<GameObject> collectedGroceries;
-
-    // Creating dictionary for grocery prefabs
-    // List because unity editor don't support dictionaries
-    [SerializeField] public List<GroceryEntry> groceryPrefab;
-    // Used to map grocery types to corresponding sprites
-    private Dictionary<Grocery.GroceryType, GameObject> groceryPrefabLookup;
     [Serializable]
     public class GroceryEntry
     {
@@ -114,7 +72,7 @@ public class Spawn_items : MonoBehaviour
 
 
             // Add gravity
-            collectedGroceries[count-1].GetComponent<Rigidbody2D>().gravityScale = gravity;
+            collectedGroceries[count - 1].GetComponent<Rigidbody2D>().gravityScale = gravity;
 
             // Spawn grocery add random position
             GameObject go = Instantiate(collectedGroceries[count - 1], new Vector3(UnityEngine.Random.Range(minX
@@ -139,7 +97,7 @@ public class Spawn_items : MonoBehaviour
             // Start the spawn again
             StartCoroutine("Spawn");
         }
-        else 
+        else
         {
             sceneManager.GetComponent<SceneController>().LoadGameOver();
         }
@@ -156,8 +114,8 @@ public class Spawn_items : MonoBehaviour
                 spawnTime = 2.5f;
                 break;
             case 2:
-                    Instantiate(flySpawner, new Vector3(0, 0, 0),
-                    Quaternion.identity);
+                Instantiate(flySpawner, new Vector3(0, 0, 0),
+                Quaternion.identity);
                 break;
             case 30:
                 spawnTime = 2;
@@ -176,8 +134,8 @@ public class Spawn_items : MonoBehaviour
             case 50:
 
                 Instantiate(cockroach, new Vector3(0, 0, 0),
-                                    Quaternion.identity); 
-                    break;
+                                    Quaternion.identity);
+                break;
 
             case 70:
                 spawnTime = 1.3f;
