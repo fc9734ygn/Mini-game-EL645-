@@ -7,7 +7,7 @@ public static class RecipeGenerator
     public static Recipe GetRandomRecipe()
     {
         Recipe recipe;
-        var random = Random.Range(0, 5);
+        var random = Random.Range(0, 4);
         switch (random)
         {
             case 0:

@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     // Score counter
     public GameObject scoreBoard;
     // Score
-    private int scoreCount;
+    public static int scoreCount;
     // AudioSource component
     private AudioSource audioSource;
     // Audio Clips

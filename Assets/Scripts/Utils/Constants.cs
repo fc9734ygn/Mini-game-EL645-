@@ -12,10 +12,10 @@ public class Constants
     public static float MAXSCREENHEIGHT = 4.8f;
     public static string PLAYER_PREF_HIGHSCORE_KEY = "Highscore";
     public static string HIGHSCORES_TEXT = "Current highscore: ";
-    public static string RECIPE_0 = "Spaghetti Napolitana";
-    public static string RECIPE_1 = "Spaghetti Bolognese";
-    public static string RECIPE_2 = "Spaghetti Carbonara";
-    public static string RECIPE_3 = "Spaghetti Aglio e Olio";
+    public static string RECIPE_0 = "Napolitana";
+    public static string RECIPE_1 = "Bolognese";
+    public static string RECIPE_2 = "Carbonara";
+    public static string RECIPE_3 = "Aglio e Olio";
 
     public enum TOOLTYPE
     { 
