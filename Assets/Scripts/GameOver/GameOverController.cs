@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GameOverController : MonoBehaviour
 {
-    HighscoresController highscoresController;
+    public HighscoresController highscoresController;
     public GameObject scorePanel;
     public GameObject newHighscorePanel;
 

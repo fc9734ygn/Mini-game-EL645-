@@ -13,6 +13,8 @@ public class Spawn_items : MonoBehaviour
     public float maxX = 9; //Max x spawn position
     public float minX = -9; //Min x spawn position
 
+    public GameObject sceneManager;
+
     // Spawned grocery count
     private int count = 0;
 
@@ -97,8 +99,8 @@ public class Spawn_items : MonoBehaviour
             StartCoroutine("Spawn");
         }
         else 
-        { 
-        // game over
+        {
+            sceneManager.GetComponent<SceneController>().LoadGameOver();
         }
 
 

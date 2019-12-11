@@ -37,6 +37,7 @@ public class SceneController : MonoBehaviour
 
     public void LoadGameOver()
     {
+       // SceneManager.LoadScene("GameOver");
         LoadingScreen.Instance.Show(SceneManager.LoadSceneAsync("GameOver"));
     }
 }
