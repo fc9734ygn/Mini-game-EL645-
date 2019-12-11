@@ -97,7 +97,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Fly"))
         {
-            scoreCount  -= 15;
+            scoreCount  -= 10;
             scoreBoard.gameObject.GetComponent<ScoreCounter>().SetScore(scoreCount);
             audioSource.clip = errorAudio;
             audioSource.Play();
