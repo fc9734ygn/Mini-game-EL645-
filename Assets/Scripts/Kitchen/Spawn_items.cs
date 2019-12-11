@@ -113,14 +113,14 @@ public class Spawn_items : MonoBehaviour
             case 10:
                 spawnTime = 2.5f;
                 break;
-            case 2:
+            case 20:
                 Instantiate(flySpawner, new Vector3(0, 0, 0),
                 Quaternion.identity);
                 break;
             case 30:
                 spawnTime = 2;
                 break;
-            case 4:
+            case 49:
                 GameObject[] flies;
                 flies = GameObject.FindGameObjectsWithTag("Fly");
                 if (flies.Length > 0)
