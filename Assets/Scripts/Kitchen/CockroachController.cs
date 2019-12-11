@@ -71,6 +71,7 @@ public class CockroachController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Border"))
         {
+            Debug.Log("hit");
             transform.Rotate(new Vector3(0, 0, 180));
             transform.position += 2 * transform.up * movementSpeed * Time.deltaTime;
         }
