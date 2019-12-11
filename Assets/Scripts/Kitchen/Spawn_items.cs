@@ -14,6 +14,47 @@ public class Spawn_items : MonoBehaviour
     public float minX = -9; //Min x spawn position
 
     public GameObject sceneManager;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Spawn_items : MonoBehaviour
+{
+    public float spawnTime= 3;
+
+    public float upForce = 680; //Up force
+    public float leftRightForce = 180; //Left and right force
+    public float gravity = 1;
+    public float maxX = 9; //Max x spawn position
+    public float minX = -9; //Min x spawn position
+    private int count = 0;
+    public GameObject flySpawner;
+    public GameObject cockroach;
+
+    // List of collected groceries
+    private List<GameObject> collectedGroceries;
+
+
+    // List because unity editor don't support dictionaries
+    [SerializeField] public List<GroceryEntry> groceryPrefab;
+
+    // Used to map grocery types to corresponding sprites
+    private Dictionary<Grocery.GroceryType, GameObject> groceryPrefabLookup;
+
+    [Serializable]
+    public class GroceryEntry
+    {
+        public Grocery.GroceryType type;
+        public GameObject prefab;
+    }
+
+
+
+    // Assigning Prefabs
+    void Awake()
+    {
+        AssignPrefabs();
+    }
 
     // Spawned grocery count
     private int count = 0;

@@ -7,8 +7,10 @@ public class FlyController : MonoBehaviour
     public int rotationSpeed = 150;
     public float movementSpeed = 6;
 
+
     void Start()
     {
+   
        ChangeRotation();
     }
 
