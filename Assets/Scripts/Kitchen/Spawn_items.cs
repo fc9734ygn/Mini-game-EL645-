@@ -5,29 +5,27 @@ using UnityEngine;
 
 public class Spawn_items : MonoBehaviour
 {
-    // Spawning variables
     public float spawnTime= 3;
+
     public float upForce = 680; //Up force
     public float leftRightForce = 180; //Left and right force
     public float gravity = 1;
     public float maxX = 9; //Max x spawn position
     public float minX = -9; //Min x spawn position
-
-    // Spawned grocery count
     private int count = 0;
-
-    // Enemies to be spawned
     public GameObject flySpawner;
     public GameObject cockroach;
 
     // List of collected groceries
     private List<GameObject> collectedGroceries;
 
-    // Creating dictionary for grocery prefabs
+
     // List because unity editor don't support dictionaries
     [SerializeField] public List<GroceryEntry> groceryPrefab;
+
     // Used to map grocery types to corresponding sprites
     private Dictionary<Grocery.GroceryType, GameObject> groceryPrefabLookup;
+
     [Serializable]
     public class GroceryEntry
     {
@@ -35,10 +33,9 @@ public class Spawn_items : MonoBehaviour
         public GameObject prefab;
     }
 
-    // Sound Effects
 
 
-
+    // Assigning Prefabs
     void Awake()
     {
         AssignPrefabs();
@@ -61,11 +58,9 @@ public class Spawn_items : MonoBehaviour
     {
         // Wait spawnTime
         yield return new WaitForSeconds(spawnTime);
-
-        //Increase spawned grocery count
+        //Increase item count
         count++;
 
-        // If count is less or equal to grocery list length then spawn the next grocery
         if (count <= collectedGroceries.Count)
         {
 
@@ -73,7 +68,7 @@ public class Spawn_items : MonoBehaviour
             // Add gravity
             collectedGroceries[count-1].GetComponent<Rigidbody2D>().gravityScale = gravity;
 
-            // Spawn grocery add random position
+            // Spawn prefab add random position
             GameObject go = Instantiate(collectedGroceries[count - 1], new Vector3(UnityEngine.Random.Range(minX
             , maxX + 1), transform.position.y, 0f), Quaternion.Euler(0, 0, 0)) as GameObject;
 
@@ -89,20 +84,18 @@ public class Spawn_items : MonoBehaviour
                 go.GetComponent<Rigidbody2D>().AddForce(new Vector2(leftRightForce, upForce));
             }
 
-            // Increase the difficulty of the second scene
+
+
+
             IncreaseDifficulty2();
 
 
             // Start the spawn again
             StartCoroutine("Spawn");
         }
-        else 
-        { 
-        // game over
-        }
 
 
-
+        
     }
     private void IncreaseDifficulty2()
     {
@@ -112,14 +105,14 @@ public class Spawn_items : MonoBehaviour
             case 10:
                 spawnTime = 2.5f;
                 break;
-            case 2:
+            case 20:
                     Instantiate(flySpawner, new Vector3(0, 0, 0),
                     Quaternion.identity);
                 break;
             case 30:
                 spawnTime = 2;
                 break;
-            case 4:
+            case 49:
                 GameObject[] flies;
                 flies = GameObject.FindGameObjectsWithTag("Fly");
                 if (flies.Length > 0)
