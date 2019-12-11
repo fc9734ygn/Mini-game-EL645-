@@ -8,6 +8,7 @@ public static class RecipeGenerator
     {
         Recipe recipe;
         var random = Random.Range(0, 4);
+
         switch (random)
         {
             case 0:
