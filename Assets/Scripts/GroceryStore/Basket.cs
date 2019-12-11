@@ -18,6 +18,7 @@ public class Basket : MonoBehaviour
 
     void Start()
     {
+        currentRecipe = null;
         collectedGroceries = new List<Grocery.GroceryType> { };
     }
 
