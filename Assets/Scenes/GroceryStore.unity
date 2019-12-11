@@ -1904,6 +1904,28 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2902837575955736519, guid: d449bf9b2c4553245972a36b664eb5eb,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 4f6de0e6e62e14a8ba1e472b6fc78894,
+        type: 2}
+    - target: {fileID: 2902837575955736519, guid: d449bf9b2c4553245972a36b664eb5eb,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 21472559202620632, guid: 4f6de0e6e62e14a8ba1e472b6fc78894,
+        type: 2}
+    - target: {fileID: 2902837575955736519, guid: d449bf9b2c4553245972a36b664eb5eb,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 2902837575955736519, guid: d449bf9b2c4553245972a36b664eb5eb,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2902837576470064111, guid: d449bf9b2c4553245972a36b664eb5eb,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -1943,28 +1965,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2902837575955736519, guid: d449bf9b2c4553245972a36b664eb5eb,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 4f6de0e6e62e14a8ba1e472b6fc78894,
-        type: 2}
-    - target: {fileID: 2902837575955736519, guid: d449bf9b2c4553245972a36b664eb5eb,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 21472559202620632, guid: 4f6de0e6e62e14a8ba1e472b6fc78894,
-        type: 2}
-    - target: {fileID: 2902837575955736519, guid: d449bf9b2c4553245972a36b664eb5eb,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 2902837575955736519, guid: d449bf9b2c4553245972a36b664eb5eb,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d449bf9b2c4553245972a36b664eb5eb, type: 3}
