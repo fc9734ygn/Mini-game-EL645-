@@ -113,7 +113,7 @@ public class Spawn_items : MonoBehaviour
             case 10:
                 spawnTime = 2.5f;
                 break;
-            case 20:
+            case 2:
                 Instantiate(flySpawner, new Vector3(0, 0, 0),
                 Quaternion.identity);
                 break;
