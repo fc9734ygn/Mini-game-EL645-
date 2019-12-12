@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spawn_Flies : MonoBehaviour
 {
-    private readonly int spawnIntervalInSeconds = 4;
+    private readonly int spawnIntervalInSeconds = 7;
     private int count;
     public GameObject fly;
     void Start()
