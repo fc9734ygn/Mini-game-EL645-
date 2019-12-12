@@ -814,7 +814,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d03e8945ad0924bdfa9c22f1245e085b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colDepth: 1
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -6959,12 +6958,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 414f9df89d8c7e24aa323b47187ce9fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTime: 3
-  upForce: 680
-  leftRightForce: 180
-  gravity: 1
-  maxX: 9
-  minX: -9
   flySpawner: {fileID: 5756269587903036083, guid: 01822d93a6b084e19aa2aedf30075e04,
     type: 3}
   cockroach: {fileID: 8294949629623292554, guid: 7eb35cf8520bb44ceb11a40c5b77eeb2,
@@ -7437,7 +7430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
+  m_Color: {r: 0.9058824, g: 0.909804, b: 0.9058824, a: 0.96862745}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7448,7 +7441,7 @@ MonoBehaviour:
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -7573,9 +7566,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19b63dd6e0f244c6598e1eeaadcc44af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 150
-  movementSpeed: 6
-  changeTime: 1
 --- !u!1001 &4914659523400736654
 PrefabInstance:
   m_ObjectHideFlags: 0
