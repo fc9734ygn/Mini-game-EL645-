@@ -96,17 +96,17 @@ public class Spawn_items : MonoBehaviour
     {
         switch (count)
         {
+            case 5:
+                // Spawn flies
+                Instantiate(flySpawner, new Vector3(0, 0, 0),
+                Quaternion.identity);
+                break;
             // Decrease spawning time
             case 10:
                 spawnTime = 2.5f;
                 break;
-                // Spawn flies
-            case 15:
-                Instantiate(flySpawner, new Vector3(0, 0, 0),
-                Quaternion.identity);
-                break;
                 // Decrease spawning time
-            case 30:
+            case 25:
                 spawnTime = 2;
                 break;
                 // Destroy flies
@@ -128,8 +128,8 @@ public class Spawn_items : MonoBehaviour
                                     Quaternion.identity);
                 break;
                 // Decrease spawning time
-            case 50:
-                spawnTime = 1.3f;
+            case 40:
+                spawnTime = 1.5f;
                 break;
         }
     }
