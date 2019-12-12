@@ -50,6 +50,6 @@ public class ColliderGenerator : MonoBehaviour
         topCollider.localScale = new Vector3(screenSize.x * 2, colDepth, colDepth);
         topCollider.position = new Vector3(cameraPos.x, cameraPos.y + screenSize.y + (topCollider.localScale.y * 0.5f), 0);
         bottomCollider.localScale = new Vector3(screenSize.x * 2, colDepth, colDepth);
-        bottomCollider.position = new Vector3(cameraPos.x, cameraPos.y - screenSize.y - (bottomCollider.localScale.y * 0.5f), 0);
+        bottomCollider.position = new Vector3(cameraPos.x, 3 + cameraPos.y - screenSize.y - (bottomCollider.localScale.y * 0.5f), 0);
     }
 }
