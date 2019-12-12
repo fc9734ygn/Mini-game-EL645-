@@ -131,6 +131,10 @@ public class Spawn_items : MonoBehaviour
             case 40:
                 spawnTime = 1.5f;
                 break;
+            case 50:
+                spawnTime = 1.2f;
+                break;
+
         }
     }
     // Assigns the prefabs in the Dictionary
