@@ -123,17 +123,19 @@ public class Spawn_items : MonoBehaviour
                 break;
                 // Spawn coackroach
             case 36:
-                Instantiate(cockroach, new Vector3(0, 50, 0),
+                Instantiate(cockroach, new Vector3(0, 0, 0),
                                     Quaternion.identity);
                 break;
                 // Decrease spawning time
             case 40:
-                spawnTime = 1.5f;
+                spawnTime = 1.6f;
                 break;
             case 50:
-                spawnTime = 1.2f;
+                spawnTime = 1.3f;
                 break;
-
+            case 100:
+                spawnTime = 1;
+                break;
         }
     }
     // Assigns the prefabs in the Dictionary
