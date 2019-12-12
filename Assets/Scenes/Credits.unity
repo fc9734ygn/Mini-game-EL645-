@@ -124,6 +124,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: musicBackground
       objectReference: {fileID: 0}
+    - target: {fileID: 3422112069836913344, guid: f815c4d9de764f54982535f7c6c15d96,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 3422112069836913350, guid: f815c4d9de764f54982535f7c6c15d96,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -192,6 +197,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SceneController
+      objectReference: {fileID: 0}
+    - target: {fileID: 2252111273583825566, guid: 7e60d41a12ad4d14d909eb91223ead21,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9117371134767986013, guid: 7e60d41a12ad4d14d909eb91223ead21,
         type: 3}
@@ -278,7 +288,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!114 &328042536
 MonoBehaviour:
@@ -346,7 +356,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!224 &478611515
 RectTransform:
@@ -580,7 +590,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!224 &986418585
 RectTransform:
@@ -736,6 +746,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuBackgroundImage
       objectReference: {fileID: 0}
+    - target: {fileID: 1229326828308823494, guid: 25af65a5644b1a44883efe03eea035fb,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 1229326828308823512, guid: 25af65a5644b1a44883efe03eea035fb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -809,7 +824,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!224 &1465053994
 RectTransform:
@@ -976,7 +991,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!114 &1658008281
 MonoBehaviour:
@@ -1078,7 +1093,7 @@ GameObject:
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!81 &1958582993
 AudioListener:
@@ -1160,7 +1175,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!224 &1988913947
 RectTransform:
@@ -1318,7 +1333,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!224 &2028129734
 RectTransform:
@@ -1476,7 +1491,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!212 &2073820634
 SpriteRenderer:
