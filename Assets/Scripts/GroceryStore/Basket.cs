@@ -42,11 +42,6 @@ public class Basket : MonoBehaviour
         }
     }
 
-    private void OnDrag()
-    {
-        MoveBasket();
-    }
-
     private void MoveBasket()
     {
         transform.position = new Vector3(GetPhoneCursorPosition().x, transform.position.y);
@@ -55,7 +50,8 @@ public class Basket : MonoBehaviour
     private bool CheckIfSelected()
     {
         Bounds basketBounds = GetComponent<SpriteRenderer>().bounds;
-        return Input.touchCount == 1 && basketBounds.Contains(GetPhoneCursorPosition());
+        Bounds touchBounds = new Bounds(transform.position,new Vector3(5,5,5));
+        return Input.touchCount == 1 && touchBounds.Contains(GetPhoneCursorPosition());
     }
 
 
