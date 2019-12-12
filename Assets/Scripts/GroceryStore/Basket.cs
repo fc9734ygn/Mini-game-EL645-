@@ -18,6 +18,7 @@ public class Basket : MonoBehaviour
 
     void Start()
     {
+        PlayerController.scoreCount = 0;
         currentRecipe = null;
         collectedGroceries = new List<Grocery.GroceryType> { };
     }
