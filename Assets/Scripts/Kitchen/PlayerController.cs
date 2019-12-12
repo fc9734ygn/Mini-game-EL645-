@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private Constants.TOOLTYPE currentTool = Constants.TOOLTYPE.Knife;
+    private Constants.TOOLTYPE currentTool;
     TrailRenderer myTrailRenderer;
     // Score counter
     public GameObject scoreBoard;
@@ -35,7 +35,12 @@ public class PlayerController : MonoBehaviour
         Screen.orientation = ScreenOrientation.Landscape;
         // Prevent phone screen from "sleeping"
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
-        UpdateState();
+        // change trail renderer colour
+        myTrailRenderer.startColor = Constants.KNIFECOLOR;
+        myTrailRenderer.endColor = Constants.KNIFECOLOR;
+        // change sound effect
+        currentAudio = knifeAudio;
+        currentTool = Constants.TOOLTYPE.Knife;
     }
     void Update()
     {
