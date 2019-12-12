@@ -123,8 +123,7 @@ public class Spawn_items : MonoBehaviour
                 break;
                 // Spawn coackroach
             case 36:
-
-                Instantiate(cockroach, new Vector3(0, 0, 0),
+                Instantiate(cockroach, new Vector3(0, 50, 0),
                                     Quaternion.identity);
                 break;
                 // Decrease spawning time

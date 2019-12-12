@@ -41,12 +41,12 @@ public class GrocerySpawner : MonoBehaviour
     {
         if (dropSpeed < maxDropSpeed)
         {
-            dropSpeed = dropSpeed + 25;
+            dropSpeed = dropSpeed + 35;
         }
 
         if(spawnIntervalInSeconds > minInterval)
         {
-            spawnIntervalInSeconds = spawnIntervalInSeconds - 0.075f;
+            spawnIntervalInSeconds = spawnIntervalInSeconds - 0.1f;
 
         }
     }
