@@ -1630,6 +1630,7 @@ GameObject:
   - component: {fileID: 1539355872}
   - component: {fileID: 1539355871}
   - component: {fileID: 1539355874}
+  - component: {fileID: 1539355875}
   m_Layer: 5
   m_Name: StartBtn
   m_TagString: Untagged
@@ -1742,8 +1743,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 0c97ea428b5694ab1a3e4bb4eb75ccd4, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1855,6 +1856,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &1539355875
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539355869}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 78e8303369d354125993ec184424f6a7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1956338166
 GameObject:
   m_ObjectHideFlags: 0
@@ -2357,11 +2377,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 963178652}
-    - target: {fileID: 4684761725562251775, guid: 27d8b4c11d6adc14588556fe7f65ace4,
-        type: 3}
-      propertyPath: minLoadingTimeInSeconds
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4684761725451076281, guid: 27d8b4c11d6adc14588556fe7f65ace4,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -2401,6 +2416,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableWordWrapping
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684761725562251775, guid: 27d8b4c11d6adc14588556fe7f65ace4,
+        type: 3}
+      propertyPath: minLoadingTimeInSeconds
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27d8b4c11d6adc14588556fe7f65ace4, type: 3}
