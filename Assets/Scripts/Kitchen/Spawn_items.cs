@@ -99,7 +99,7 @@ public class Spawn_items : MonoBehaviour
         }
         else
         {
-            //sceneManager.GetComponent<SceneController>().LoadGameOver();
+            sceneManager.GetComponent<SceneController>().LoadGameOver();
         }
 
 
