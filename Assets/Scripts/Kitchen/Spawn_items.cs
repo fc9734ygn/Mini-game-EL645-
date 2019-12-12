@@ -99,7 +99,7 @@ public class Spawn_items : MonoBehaviour
         }
         else
         {
-            sceneManager.GetComponent<SceneController>().LoadGameOver();
+            //sceneManager.GetComponent<SceneController>().LoadGameOver();
         }
 
 
@@ -113,7 +113,7 @@ public class Spawn_items : MonoBehaviour
             case 10:
                 spawnTime = 2.5f;
                 break;
-            case 2:
+            case 16:
                 Instantiate(flySpawner, new Vector3(0, 0, 0),
                 Quaternion.identity);
                 break;
