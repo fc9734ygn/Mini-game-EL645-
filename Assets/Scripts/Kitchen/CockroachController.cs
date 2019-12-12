@@ -33,7 +33,7 @@ public class CockroachController : MonoBehaviour
             }
 
         }
-        else 
+        else
         {
             transform.Rotate(new Vector3(0, 0, rotationSpeed * Time.deltaTime));
         }

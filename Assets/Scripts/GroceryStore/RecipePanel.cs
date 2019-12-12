@@ -25,15 +25,25 @@ public class RecipePanel : MonoBehaviour
         public Sprite sprite;
     }
 
+    private void Awake()
+    {
+        AssignSprites();
+    }
+
+    private void AssignSprites()
+    {
+        grocerySpriteLookup = new Dictionary<Grocery.GroceryType, Sprite>();
+
+        foreach (GrocerySpritesEntry entry in grocerySprites)
+        {
+            grocerySpriteLookup.Add(entry.type, entry.sprite);
+        }
+    }
+
     private void Start()
     {
         var recipe = RecipeGenerator.GetRandomRecipe();
         SetCurrentRecipe(recipe);
-    }
-
-    private void Awake()
-    {
-        AssignSprites();
     }
 
     public void SetCurrentRecipe(Recipe newRecipe)
@@ -70,15 +80,5 @@ public class RecipePanel : MonoBehaviour
         newGridItem.transform.localScale = new Vector3(1, 1, 1);
         newGridItem.transform.localPosition = Vector3.zero;
         newGridItem.GetComponentInChildren<TextMeshProUGUI>().SetText(groceryType.ToString());
-    }
-
-    private void AssignSprites()
-    {
-        grocerySpriteLookup = new Dictionary<Grocery.GroceryType, Sprite>();
-
-        foreach (GrocerySpritesEntry entry in grocerySprites)
-        {
-            grocerySpriteLookup.Add(entry.type, entry.sprite);
-        }
     }
 }
