@@ -7,45 +7,32 @@ using UnityEngine;
 
 public class Spawn_items : MonoBehaviour
 {
-    public float spawnTime = 3;
-
-    public float upForce = 680; //Up force
-    public float leftRightForce = 180; //Left and right force
-    public float gravity = 1;
-    public float maxX = 9; //Max x spawn position
-    public float minX = -9; //Min x spawn position
+    private float spawnTime = 3;
+    public readonly int upForce = 680; // Up force
+    public readonly int leftRightForce = 180; // Left and right force
+    private readonly int gravity = 1;
+    private readonly int maxX = 9; // Max x spawn position
+    private readonly int minX = -9; // Min x spawn position
     private int count = 0;
     public GameObject flySpawner;
     public GameObject cockroach;
     public GameObject sceneManager;
-
     // List of collected groceries
     private List<GameObject> collectedGroceries;
-
-
     // List because unity editor don't support dictionaries
     [SerializeField] public List<GroceryEntry> groceryPrefab;
-
     // Used to map grocery types to corresponding sprites
     private Dictionary<Grocery.GroceryType, GameObject> groceryPrefabLookup;
-
     [Serializable]
     public class GroceryEntry
     {
         public Grocery.GroceryType type;
         public GameObject prefab;
     }
-
-    // Sound Effects
-
-
-
     void Awake()
     {
         AssignPrefabs();
     }
-
-    // On Start
     void Start()
     {
         collectedGroceries = new List<GameObject> { };
@@ -57,7 +44,6 @@ public class Spawn_items : MonoBehaviour
 
         StartCoroutine("Spawn");
     }
-
     IEnumerator Spawn()
     {
         // Wait spawnTime
@@ -99,28 +85,32 @@ public class Spawn_items : MonoBehaviour
         }
         else
         {
+            // Wait for last grocery
+            yield return new WaitForSeconds(2);
+            // Game over screen
             sceneManager.GetComponent<SceneController>().LoadGameOver();
         }
-
-
-
     }
+    // Increase difficulty
     private void IncreaseDifficulty2()
     {
-        // Increase difficulty
         switch (count)
         {
+            // Decrease spawning time
             case 10:
                 spawnTime = 2.5f;
                 break;
-            case 16:
+                // Spawn flies
+            case 15:
                 Instantiate(flySpawner, new Vector3(0, 0, 0),
                 Quaternion.identity);
                 break;
+                // Decrease spawning time
             case 30:
                 spawnTime = 2;
                 break;
-            case 49:
+                // Destroy flies
+            case 35:
                 GameObject[] flies;
                 flies = GameObject.FindGameObjectsWithTag("Fly");
                 if (flies.Length > 0)
@@ -131,18 +121,19 @@ public class Spawn_items : MonoBehaviour
                     }
                 }
                 break;
-            case 50:
+                // Spawn coackroach
+            case 36:
 
                 Instantiate(cockroach, new Vector3(0, 0, 0),
                                     Quaternion.identity);
                 break;
-
-            case 70:
+                // Decrease spawning time
+            case 50:
                 spawnTime = 1.3f;
                 break;
         }
-
     }
+    // Assigns the prefabs in the Dictionary
     private void AssignPrefabs()
     {
         groceryPrefabLookup = new Dictionary<Grocery.GroceryType, GameObject>();

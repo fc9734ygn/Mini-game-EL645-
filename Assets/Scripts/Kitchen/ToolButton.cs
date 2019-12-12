@@ -9,12 +9,8 @@ public class ToolButton : MonoBehaviour
     private Toggle button;
     public Sprite imageOn;
     public Sprite imageOff;
-
-
-
     void Start()
     {
-        
         button = this.gameObject.GetComponent<Toggle>();
         button.onValueChanged.AddListener((bool On) => Switch(On));
 

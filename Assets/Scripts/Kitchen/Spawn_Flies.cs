@@ -4,18 +4,15 @@ using UnityEngine;
 
 public class Spawn_Flies : MonoBehaviour
 {
-    public float spawnIntervalInSeconds=4;
+    private readonly int spawnIntervalInSeconds = 4;
     private int count;
-
     public GameObject fly;
-
-
     void Start()
     {
         count = 0;
         StartCoroutine("Spawn");
     }
-
+    // Spawn flies
     IEnumerator Spawn()
     {
         yield return new WaitForSeconds(spawnIntervalInSeconds);

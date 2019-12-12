@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CockroachController : MonoBehaviour
 {
-    public int rotationSpeed = 100;
-    public float movementSpeed = 2;
-    public float changeTime = 1f;
+    private int rotationSpeed = 100;
+    private readonly float movementSpeed = 2;
+    private readonly float changeTime = 1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,19 +14,16 @@ public class CockroachController : MonoBehaviour
     }
     void ChangeRotation()
     {
-
         if (Random.value > 0.5f)
         {
             rotationSpeed = -rotationSpeed;
         }
         Invoke("ChangeRotation", changeTime);
-
     }
-
-    // Update is called once per frame
     void Update()
     {
-        if (Random.value < 0.08f)
+        // Roaming 90% of the time 10% going towards nearest grocery
+        if (Random.value < 0.1f)
         {
             if (FindClosestGrocery())
             {
@@ -41,13 +38,8 @@ public class CockroachController : MonoBehaviour
             transform.Rotate(new Vector3(0, 0, rotationSpeed * Time.deltaTime));
         }
         transform.position += 2 * transform.up * movementSpeed * Time.deltaTime;
-
     }
-
-
-
-
-
+    // Finds the nearest grocery
     GameObject FindClosestGrocery()
     {
         GameObject[] gos;
@@ -67,7 +59,8 @@ public class CockroachController : MonoBehaviour
         }
         return closest;
     }
-     void OnCollisionEnter2D(Collision2D other)
+    // Changing direction when reaching borders
+    void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Border"))
         {
@@ -75,9 +68,8 @@ public class CockroachController : MonoBehaviour
             transform.Rotate(new Vector3(0, 0, 180));
             transform.position += 2 * transform.up * movementSpeed * Time.deltaTime;
         }
-       
-
     }
+    // Destroying groceries
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Grocery"))

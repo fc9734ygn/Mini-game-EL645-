@@ -21,7 +21,6 @@ public class PlayerController : MonoBehaviour
     public AudioClip errorAudio;
     public AudioClip buttonAudio;
     private AudioClip currentAudio;
-
      void Start()
     {
         // Initiate score
@@ -38,28 +37,21 @@ public class PlayerController : MonoBehaviour
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         UpdateState();
     }
-
     void Update()
     {
         TrackCursor();
     }
-
     private void TrackCursor()
     {
-        // If finger identified
+        // If finger on screen
         if (Input.touchCount == 1)
         {
-
             if (Application.platform == RuntimePlatform.Android)
             {
                 transform.position = GetPhoneCursorPosition();
             }
-
-            gameObject.SetActive(true);
             gameObject.GetComponent<CircleCollider2D>().enabled = true;
             gameObject.GetComponent<TrailRenderer>().enabled = true;
-
-
         }
         else
         {
@@ -67,7 +59,6 @@ public class PlayerController : MonoBehaviour
             gameObject.GetComponent<TrailRenderer>().enabled = false;
         }
     }
-
     private Vector3 GetPhoneCursorPosition()
     {
         Vector3 pos;

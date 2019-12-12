@@ -16,7 +16,6 @@ public class Constants
     public static string RECIPE_1 = "Bolognese";
     public static string RECIPE_2 = "Carbonara";
     public static string RECIPE_3 = "Aglio e Olio";
-
     public enum TOOLTYPE
     { 
         Knife,
@@ -24,5 +23,4 @@ public class Constants
         Grater,
         Hand
     }
-
 }
