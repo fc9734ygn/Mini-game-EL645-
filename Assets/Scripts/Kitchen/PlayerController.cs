@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
         // If finger on screen
         if (Input.touchCount == 1)
         {
-            if (Application.platform == RuntimePlatform.Android)
+            if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
             {
                 transform.position = GetPhoneCursorPosition();
             }
