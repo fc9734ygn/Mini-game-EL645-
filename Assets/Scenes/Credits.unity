@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 153747146}
   - component: {fileID: 153747145}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: AssetPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1150,7 +1150,7 @@ GameObject:
   - component: {fileID: 1658008282}
   - component: {fileID: 1658008281}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: CreditCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1250,7 +1250,7 @@ GameObject:
   - component: {fileID: 1828590287}
   - component: {fileID: 1828590286}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: CreditPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
