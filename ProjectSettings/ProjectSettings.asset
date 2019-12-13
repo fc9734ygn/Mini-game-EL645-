@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: BestCompany
+  companyName: MM
   productName: Spaghetti Fever
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -154,8 +154,8 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.BestCompany.PastaGame
-    Standalone: com.MMTeam.TestFeverPasta
-    iOS: com.MMTeam.TestFeverPasta
+    Standalone: com.MM.SpaghettiFeverTest
+    iOS: com.MM.SpaghettiFeverTest
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 16
